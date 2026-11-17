@@ -255,9 +255,9 @@ footer{padding:28px 0 clamp(40px,6vw,56px);border-top:1.5px solid var(--ink);col
 
 <!-- ════ TES ════ -->
 <section id="tes"><div class="wrap">
-  <div class="sec-label">Tes Singkat</div>
-  <h2>Kenali dirimu</h2>
-  <p class="sec-intro">Beberapa tes untuk refleksi dan bersenang-senang. Semua diproses di perangkatmu, tidak dikirim ke mana pun, dan bukan penilaian profesional.</p>
+  <div class="sec-label">Refleksi & Pengembangan Diri</div>
+  <h2>Kenali Diri & Bantu Sesama</h2>
+  <p class="sec-intro">Kumpulan tes reflektif untuk memetakan kepribadian, mengelola stres, mengatasi penundaan, serta menemukan cara terbaik kita hadir membantu orang di sekitar kita. Diproses aman di browsermu, tanpa data yang dikirim ke mana pun.</p>
   <div id="tbox"></div>
 </div></section>
 
@@ -287,9 +287,8 @@ footer{padding:28px 0 clamp(40px,6vw,56px);border-top:1.5px solid var(--ink);col
   <div class="sec-label">Kontak</div>
   <h2>Mari ngobrol</h2>
   <a class="r" href="https://instagram.com/sebutsaja_fik" target="_blank" rel="noopener">Instagram <span>@sebutsaja_fik</span></a>
-  <!-- GANTI: email dan WhatsApp asli -->
+  <!-- GANTI: email asli -->
   <a class="r" href="mailto:emailkamu@example.com">Email <span>emailkamu@example.com</span></a>
-  <a class="r" href="https://wa.me/6281234567890" target="_blank" rel="noopener">WhatsApp <span>0812-3456-7890</span></a>
 </div></section>
 
 </main>
@@ -622,23 +621,145 @@ var TR={
   S:["Kestabilan Emosi (Emotional Stability)","Kapasitas regulasi emosi yang stabil di bawah tekanan (resiliensi tinggi).","Sensitif dan reaktif terhadap stres, yang sering kali diimbangi kewaspadaan dan kepekaan tinggi."]
 };
 
-// 2. Tes Tipe Seniman
-var AQ=[
-  {q:"Saat memiliki satu hari libur penuh tanpa rencana, apa yang paling menarik bagimu?",o:[["Menjelajahi sudut kota atau alam yang belum pernah kukunjungi","J"],["Duduk tenang di sebuah kedai sambil mengamati tingkah laku orang-orang","P"],["Mengutak-atik barang bekas atau eksperimen acak yang tidak jelas hasilnya","B"],["Menyelesaikan satu kerajinan atau tugas kecil sampai benar-benar rapi","R"]]},
-  {q:"Dihadapkan pada selembar kanvas atau kertas putih kosong, apa langkah pertamamu?",o:[["Mengingat kembali perjalanan atau cerita berkesan yang ingin kuabadikan","J"],["Mengamati tekstur kertas dan membiarkan inspirasi mengendap perlahan","P"],["Langsung menggoreskan warna pertama secara spontan tanpa rencana","B"],["Membuat sketsa tipis dan menyusun proporsi terlebih dahulu","R"]]},
-  {q:"Apresiasi seperti apa yang paling membuat hatimu hangat?",o:[["'Karyamu membawaku berimajinasi ke tempat lain yang jauh.'","J"],["'Kamu sangat peka menangkap detail kecil yang sering dilewatkan orang.'","P"],["'Aku belum pernah melihat karya seunik dan seberani ini.'","B"],["'Kerapian teknik dan ketelitian tanganmu luar biasa.'","R"]]},
-  {q:"Benda apa yang paling sering ada di dalam tas atau sakumu?",o:[["Buku catatan kecil untuk mencatat tempat dan kejadian acak","J"],["Kamera saku atau sketchbook untuk menangkap momen visual","P"],["Benda unik atau stiker acak yang kutemukan di jalan","B"],["Satu set alat tulis yang teratur dalam pouch khusus","R"]]},
-  {q:"Ketika hasil karyamu terasa gagal atau tidak sesuai ekspektasi, kamu...",o:[["Meninggalkannya sejenak, jalan-jalan ke luar mencari udara segar","J"],["Menganalisis di mana letak ketidakseimbangannya untuk dipelajari","P"],["Menimpanya dengan cat warna tebal dan mengubahnya jadi bentuk lain","B"],["Memperbaikinya dengan sabar sampai mendekati standar yang kuinginkan","R"]]},
-  {q:"Suasana musik apa yang paling nyaman menemanimu berkarya?",o:[["Lagu bernuansa etnik atau playlist dari berbagai belahan dunia","J"],["Instrumen akustik yang tenang tanpa banyak lirik","P"],["Musik eksperimental, distorsi, atau yang tidak biasa didengar","B"],["Daftar putar lagu favorit yang sudah kuhafal dan berulang-ulang","R"]]}
+// 2. Gaya Berempati & Mendukung Sesama
+var EMQ=[
+  {q:"Saat seorang teman dekat datang dengan mata berkaca-kaca karena masalah berat, respon pertamamu adalah...",o:[
+    ["Duduk di sampingnya, membiarkannya menangis atau bercerita tanpa memotong sepatah kata pun","L"],
+    ["Langsung menanyakan apa hal mendesak yang bisa kubantu kerjakan agar bebannya berkurang","H"],
+    ["Mendengarkan kronologinya dan membantu memetakan jalan keluar yang paling logis","G"],
+    ["Memeluknya, meyakinkannya bahwa ia orang yang kuat dan tidak sendirian melewati ini","E"]
+  ]},
+  {q:"Menurutmu, apa bentuk bantuan yang paling berharga saat seseorang sedang terpuruk?",o:[
+    ["Kehadiran tulus dan ruang aman di mana mereka tidak dihakimi atau dinasihati berlebihan","L"],
+    ["Tindakan nyata yang bisa dirasakan langsung: mengurus makanan, transportasi, atau tugas mereka","H"],
+    ["Bantuan menjernihkan pikiran agar mereka bisa melihat masalah dari sudut pandang baru yang lebih tenang","G"],
+    ["Dukungan emosional yang mengembalikan rasa percaya diri dan harapan mereka untuk bangkit","E"]
+  ]},
+  {q:"Ketika ada rekan kerja atau teman yang melakukan kesalahan besar dan merasa bersalah, kamu cenderung...",o:[
+    ["Mendengarkan perasaannya dan memvalidasi bahwa setiap manusia wajar berbuat salah","L"],
+    ["Ikut turun tangan membantu membereskan dampak kesalahan tersebut sesegera mungkin","H"],
+    ["Mengajaknya mengevaluasi mengapa itu terjadi dan merancang pencegahan untuk ke depan","G"],
+    ["Mengingatkan dia tentang hal-hal hebat yang pernah ia capai agar ia tidak putus asa","E"]
+  ]},
+  {q:"Dalam sebuah kelompok atau komunitas, peranmu yang paling menonjol biasanya...",o:[
+    ["Tempat orang-orang merasa nyaman curhat dan menumpahkan isi hati yang paling rahasia","L"],
+    ["Orang yang selalu siap diandalkan untuk urusan teknis, logistik, dan bantuan lapangan","H"],
+    ["Penasihat yang dimintai pandangan objektif saat kelompok sedang bingung mengambil arah","G"],
+    ["Penyemangat yang mencairkan ketegangan dan menjaga moril serta energi kebersamaan","E"]
+  ]},
+  {q:"Setelah selesai mendengarkan curahan hati seseorang yang panjang, kamu merasa lega bila...",o:[
+    ["Mereka berkata: 'Terima kasih sudah mendengarkan, dadaku terasa jauh lebih lapang sekarang.'","L"],
+    ["Masalah konkret yang mereka hadapi berhasil kita selesaikan bersama langkah demi langkah","H"],
+    ["Mereka mendapat pencerahan atau rencana tindakan yang jelas untuk melangkah berikutnya","G"],
+    ["Melihat senyum dan secercah harapan kembali muncul di raut wajah mereka","E"]
+  ]},
+  {q:"Prinsip utama yang kamu pegang dalam membantu sesama adalah...",o:[
+    ["'Setiap orang berhak didengar dan dipahami sebelum diberi nasihat apa pun.'","L"],
+    ["'Bantuan nyata berupa perbuatan bernilai seribu kali lipat daripada sekadar kata-kata empati.'","H"],
+    ["'Bantulah seseorang memahami masalahnya, agar ia mandiri menemukan jalan keluar hidupnya.'","G"],
+    ["'Jangan biarkan siapa pun merasa sendirian dan kehilangan harapan di saat-saat tergelap.'","E"]
+  ]}
 ];
-var AT={
-  J:["Sang Penjelajah","Inspirasimu mengalir dari pergantian tempat, jalanan baru, dan cerita orang asing. Karyamu hidup saat kamu berani melangkah ke luar zona nyaman. Tips berkarya: Selalu bawa buku sketsa mini ke mana pun kamu pergi, tangkap impresi pertama secara spontan."],
-  P:["Sang Pengamat","Kekuatan terbesarmu adalah kepekaan menangkap nuansa halus: bayangan cahaya di tembok, mimik wajah, atau heningnya suasana. Tips berkarya: Kumpulkan 'arsip visual harian' dari hal-hal remeh di sekitarmu; hal sederhana sering menjadi karya yang menyentuh."],
-  B:["Sang Pemberontak","Kamu tidak tertarik mengikuti pakem atau ekspektasi umum. Eksperimen, kontras berani, dan rasa ingin tahu adalah bahan bakarmu. Tips berkarya: Batasi peralatanmu (misalnya berkarya hanya dengan dua warna atau satu alat saja) agar daya kreatifmu semakin terasah."],
-  R:["Sang Perajin","Kamu menghargai proses yang teliti, keahlian teknik, dan penyelesaian yang tuntas. Bagimu proses pengerjaan adalah meditasi tersendiri. Tips berkarya: Sesekali izinkan dirimu membuat karya cepat yang tidak sempurna agar tidak terjebak dalam tuntutan perfeksionisme."]
+var EMR={
+  L:["Pendengar Penuh Kehadiran (Deep Listener)","Kekuatan terbesarmu dalam menolong sesama adalah kemampuan menciptakan ruang aman (safe space) tanpa menghakimi. Di dunia yang serba terburu-buru menasihati, telingamu yang sabar adalah obat penenang berharga. Tips perbaikan diri: Jaga batas energi pribadimu agar tidak ikut kelelahan menyerap beban emosi orang lain."],
+  H:["Penolong Aksi Nyata (Practical Helper)","Kamu adalah tipe penolong yang sangat taktis dan sigap. Saat orang lain hanya bisa bersimpati lewat kata-kata, kamu langsung hadir membawa bantuan konkret: membelikan makanan, mengantar, atau membereskan tugas teknis. Tips perbaikan diri: Tanyakan dulu apakah orang tersebut memang ingin dibantu tindakannya atau sekadar butuh didengar."],
+  G:["Pemandu Perspektif Bijak (Insightful Guide)","Kemampuan analisismu membantu orang yang sedang panik mengurai benang kusut masalah mereka. Kamu terampil membantu orang lain melihat sudut pandang baru yang lebih jernih. Tips perbaikan diri: Pastikan emosi mereka sudah mereda terlebih dahulu sebelum mulai membedah logika masalah."],
+  E:["Pendorong Harapan & Semangat (Warm Encourager)","Kamu adalah pembawa lentera di saat gelap. Energi hangat, optimisme, dan penguatan positifmu sanggup memulihkan harga diri orang yang sedang terpuruk. Tips perbaikan diri: Ingatlah bahwa emosi sedih itu valid; jangan terburu-buru memaksa orang tersenyum sebelum mereka selesai memproses dukanya."]
 };
 
-// 3. Tes Gaya Belajar (VARK)
+// 3. Gaya Komunikasi & Resolusi Konflik
+var KFQ=[
+  {q:"Saat ada perbedaan pendapat yang memanas antara kamu dan seseorang yang kamu sayangi, kamu...",o:[
+    ["Mengajak duduk bersama dan membedah apa yang sebenarnya diinginkan kedua pihak agar sama-sama puas","K"],
+    ["Memilih mengalah atau meredam pendapat pribadi demi menjaga perasaan dan hubungan tetap rukun","A"],
+    ["Menyampaikan sudut pandang dan batasan diriku secara jujur, tegas, namun tanpa nada menyerang","T"],
+    ["Mencari titik tengah cepat: masing-masing menurunkan sedikit tuntutan agar ada kesepakatan adil","M"]
+  ]},
+  {q:"Menurutmu, apa tujuan terpenting dari sebuah perdebatan atau diskusi sulit?",o:[
+    ["Menemukan akar masalah sebenarnya dan melahirkan solusi baru yang lebih baik dari ide awal","K"],
+    ["Memastikan relasi dan ikatan hati antar-manusia tidak rusak hanya karena perbedaan pandangan","A"],
+    ["Menjaga integritas diri dan kejujuran: apa yang benar harus diungkapkan secara bertanggung jawab","T"],
+    ["Mencapai resolusi yang praktis dan efisien agar semua pihak bisa segera melangkah maju","M"]
+  ]},
+  {q:"Ketika seseorang mengkritik caramu bekerja atau bersikap di hadapan orang lain, reaksimu...",o:[
+    ["Mengajaknya bicara empat mata untuk memahami konteks kritikannya secara menyeluruh","K"],
+    ["Menerima kritik tersebut dengan lapang dada dan meminta maaf agar suasana tidak canggung","A"],
+    ["Mengklarifikasi fakta yang keliru dengan tenang tanpa terbawa emosi atau defensif","T"],
+    ["Menyetujui sebagian poin yang memang masuk akal dan menyepakati jalan tengahnya","M"]
+  ]},
+  {q:"Dalam dinamika kerja tim atau keluarga, situasi apa yang paling membuatmu tidak nyaman?",o:[
+    ["Masalah yang disapu ke bawah karpet dan tidak pernah diselesaikan sampai tuntas ke akarnya","K"],
+    ["Suasana permusuhan, saling sindir, atau ketegangan dingin yang berlarut-larut","A"],
+    ["Ketidakjujuran, kepura-puraan, atau batasan pribadi yang dilanggar tanpa rasa hormat","T"],
+    ["Diskusi alot tanpa ujung yang menghabiskan waktu tanpa ada yang mau menurunkan ego","M"]
+  ]},
+  {q:"Gaya bicaramu saat menyampaikan hal yang sensitif biasanya...",o:[
+    ["Banyak bertanya: 'Bagaimana menurutmu jika kita melihatnya dari sudut pandang ini?'","K"],
+    ["Sangat hati-hati dan lembut agar tidak melukai harga diri orang yang diajak bicara","A"],
+    ["Lugaskan inti pesan dengan bahasa 'Saya merasa...' alih-alih menuding 'Kamu selalu...'","T"],
+    ["Langsung fokus menawarkan opsi kompromi yang bisa disepakati bersama hari ini juga","M"]
+  ]},
+  {q:"Hasil penyelesaian konflik yang paling kamu harapkan adalah...",o:[
+    ["Hubungan justru menjadi jauh lebih erat dan saling memahami secara mendalam setelah konflik reda","K"],
+    ["Kedamaian dan senyuman kembali hadir di antara semua orang yang terlibat","A"],
+    ["Adanya kejelasan batasan dan saling menghormati prinsip masing-masing secara setara","T"],
+    ["Kesepakatan bersama yang adil, seimbang, dan dapat dijalankan secara realistis","M"]
+  ]}
+];
+var KFR={
+  K:["Komunikator Kolaboratif (Collaborative Problem-Solver)","Kamu memandang konflik bukan sebagai pertarungan menang-kalah, melainkan teka-teki bersama yang harus dipecahkan. Kamu berinvestasi waktu untuk mencari solusi integratif yang memuaskan kedua belah pihak. Tips: Sadari bahwa tidak semua konflik butuh bedah mendalam; untuk hal sepele, fleksibilitas cepat sering kali lebih bijak."],
+  A:["Penjaga Keharmonisan (Accommodating Harmonizer)","Kekuatanmu adalah empati yang tinggi dan kemampuan menjaga ketenangan relasi. Kamu rela mengesampingkan ego pribadi demi kebaikan bersama dan kenyamanan orang lain. Tips perbaikan diri: Jangan membiasakan memendam kebutuhan dan batas dirimu; menyuarakan apa yang kamu rasakan adalah bagian penting dari menjaga kesehatan mental."],
+  T:["Komunikator Asertif & Berintegritas (Assertive Communicator)","Kamu mampu menyampaikan kebenaran, kejujuran, dan batasan diri secara lugas tanpa perlu menjadi agresif atau merendahkan orang lain. Orang menghormatimu karena transparansi dan ketegasanmu. Tips: Imbangi ketegasan logika dengan kehangatan emosi agar orang yang sensitif tidak merasa terancam."],
+  M:["Negosiator Kompromis (Pragmatic Compromiser)","Kamu adalah sosok yang realistis dan berorientasi pada kemajuan bersama. Saat orang lain terjebak dalam perdebatan prinsipil, kamu tampil menawarkan titik tengah yang adil: 'Setengah dariku, setengah darimu.' Tips: Pastikan kamu tidak berkompromi pada nilai-nilai inti yang fundamental demi sekadar damai sesaat."]
+};
+
+// 4. Mengurai Prokrastinasi & Pola Regulasi Diri
+var PRQ=[
+  {q:"Apa pemicu utama yang paling sering membuatmu menunda pekerjaan penting?",o:[
+    ["Rasa takut hasilnya tidak sempurna atau takut dinilai buruk oleh orang lain","F"],
+    ["Beban tugas yang menumpuk terasa begitu masif hingga aku tidak tahu dari mana harus mulai","W"],
+    ["Tugas tersebut terasa sangat membosankan, monoton, dan tidak memberi stimulasi mental","D"],
+    ["Ragu pada kemampuan diri sendiri: 'Bagaimana kalau aku gagal atau buntu di tengah jalan?'","C"]
+  ]},
+  {q:"Aktivitas apa yang paling sering menjadi pelarianmu saat sedang menunda?",o:[
+    ["Mencari referensi tiada henti, membaca ulang rencana, atau merapikan format berkas berulang kali","F"],
+    ["Membuka ponsel, scrolling media sosial, atau tidur karena merasa lelah secara mental","W"],
+    ["Mengerjakan hal-hal kecil lain yang tidak mendesak: merapikan meja, bersih-bersih kamar, dsb.","D"],
+    ["Melamun memikirkan skenario terburuk atau mengeluh tentang betapa sulitnya hidup ini","C"]
+  ]},
+  {q:"Bagaimana perasaan batinmu saat waktu batas akhir (deadline) semakin mendekat?",o:[
+    ["Frustrasi karena waktu yang tersisa tidak cukup untuk menghasilkan karya dengan kualitas terbaikku","F"],
+    ["Panik dan terjebak dalam rasa bersalah yang membuat pikiranku semakin buntu","W"],
+    ["Adrenalin tiba-tiba melonjak dan aku baru bisa fokus ngebut menyelesaikan dalam semalam","D"],
+    ["Kecemasan memuncak dan aku berharap waktu bisa dihentikan atau tugasku menghilang","C"]
+  ]},
+  {q:"Pola pikir apa yang paling sering membisik di kepalamu saat hendak mulai bekerja?",o:[
+    ["'Kalau tidak bisa buat yang luar biasa, lebih baik tunggu sampai dapat inspirasi sempurna.'","F"],
+    ["'Ini terlalu banyak, butuh waktu seharian penuh yang tenang untuk bisa mengerjakannya.'","W"],
+    ["'Sebentar lagi deh, lima menit lagi... masih ada waktu besok pagi.'","D"],
+    ["'Aku belum siap, nanti kalau salah bagaimana? Aku harus belajar lebih banyak dulu.'","C"]
+  ]},
+  {q:"Langkah apa yang paling terbukti ampuh membantumu keluar dari fase macet?",o:[
+    ["Menurunkan standarku secara sadar: memberi izin pada diri sendiri membuat 'draf pertama yang jelek'","F"],
+    ["Memecah tugas raksasa menjadi satu aksi kerdil berdurasi 5 menit (misal: hanya membuka laptop)","W"],
+    ["Menciptakan variasi suasana: pindah tempat kerja, pasang timer Pomodoro, atau sambil minum teh","D"],
+    ["Menenangkan rasa cemas lewat nafas dalam dan mengingatkan diri bahwa kesalahan adalah proses belajar","C"]
+  ]},
+  {q:"Jika kamu bisa mengubah satu hal dari kebiasaan kerjamu, kamu ingin...",o:[
+    ["Bisa merasa puas dan bangga dengan hasil karya tanpa terus-menerus mencari celah kekurangan","F"],
+    ["Memiliki ketenangan batin untuk mencicil pekerjaan secara konsisten tanpa panik di akhir","W"],
+    ["Memiliki daya tahan fokus pada hal-hal rutin tanpa mudah terdistraksi hal menyenangkan","D"],
+    ["Memiliki keberanian untuk melangkah maju tanpa dirongrong rasa takut gagal","C"]
+  ]}
+];
+var PRR={
+  F:["Tipe Perfeksionis (The Perfectionist)","Akar penundaanmu bukan kemalasan, melainkan standar internal yang teramat tinggi. Rasa takut menghasilkan karya cacat membuatmu menunda memulai. Tips perbaikan diri: Terapkan aturan 'Draft Buruk Dulu'. Selesaikan versi kasarnya secara cepat, lalu sunting kemudian. Ingat: karya selesai yang tidak sempurna jauh lebih berharga daripada mahakarya sempurna yang tak pernah dimulai."],
+  W:["Tipe Terbebani (The Overwhelmed)","Kamu menunda karena otakmu memandang tugas sebagai satu gunung raksasa yang menakutkan, memicu kelelahan mental sebelum bertindak. Tips perbaikan diri: Gunakan 'Teknik Mikro-Langkah'. Jangan berniat menyelesaikan seluruh tugas; cukup berniat mengetik judul dan satu kalimat. Otak tidak akan menolak tugas yang hanya butuh waktu dua menit."],
+  D:["Tipe Pencari Sensasi & Distraksi (The Stimulation Seeker)","Kamu mudah bosan dengan rutinitas yang monoton dan sering mengandalkan lonjakan adrenalin di malam menjelang deadline. Tips perbaikan diri: Jadikan prosesnya menarik. Gunakan sistem Pomodoro 25 menit, dengarkan musik fokus tanpa lirik, dan buat taruhan kecil dengan teman (akuntabilitas sosial)."],
+  C:["Tipe Keraguan Diri (The Fearful Procrastinator)","Penundaanmu adalah bentuk perlindungan diri dari rasa cemas dan ketakutan akan penilaian orang lain. Tips perbaikan diri: Latih self-compassion (bersikap ramah pada diri sendiri). Sadarilah bahwa kegagalan adalah data untuk belajar, bukan ukuran harga dirimu sebagai manusia. Mulailah dalam skala kecil yang aman."]
+};
+
+// 5. Gaya Belajar Efektif (VARK)
 var GBQ=[
   {q:"Saat mempelajari software atau alat baru, kamu paling terbantu oleh...",o:[["Menonton video tutorial atau melihat diagram langkah kerja","V"],["Mendengarkan penjelasan lisan atau podcast instruksi","A"],["Membaca panduan teks tertulis dan rangkuman poin-poin","R"],["Langsung menekan tombol dan mencoba fungsinya sendiri","K"]]},
   {q:"Saat mengingat kembali memori liburan tahun lalu, yang paling jelas muncul adalah...",o:[["Warna pemandangan, cahaya, dan detail visual yang kulihat","V"],["Percakapan hangat, tawa, atau alunan musik latar saat itu","A"],["Jurnal perjalanan atau pesan teks yang kubuat saat itu","R"],["Sensasi fisik: lelahnya kaki, angin dingin, atau rasa makanannya","K"]]},
@@ -654,24 +775,6 @@ var GBR={
   A:["Auditori Dominan","Kekuatan belajarmu bertumpu pada suara, intonasi, dan dialog verbal. Kamu mudah mencerna gagasan lewat mendengarkan dan mengucapkannya kembali. Tips belajar: Dengarkan podcast edukatif, diskusikan materi dengan teman, atau baca catatanmu dengan suara terdengar."],
   R:["Baca-Tulis (Read/Write) Dominan","Kamu paling nyaman membedah dunia lewat simbol kata tertulis. Rangkuman, daftar terstruktur, dan buku adalah medium terbaikmu. Tips belajar: Tulis ulang konsep rumit dengan kata-katamu sendiri, buat glosarium mini, dan gunakan format daftar poin."],
   K:["Kinestetik Dominan","Kamu belajar secara optimal melalui keterlibatan fisik langsung, eksperimen 'trial and error', dan penerapan nyata. Tips belajar: Selingi belajar dengan gerakan, gunakan studi kasus nyata, dan praktikkan konsep teoritis ke dalam proyek kecil sesegera mungkin."]
-};
-
-// 4. Tes Bahasa Kasih & Apresiasi
-var BKQ=[
-  {q:"Kamu merasa paling tersentuh ketika seseorang...",o:[["Mengucapkan terima kasih yang tulus atau memuji usahamu secara spesifik","W"],["Menyisihkan waktu luang khusus untuk mengobrol denganmu tanpa gangguan ponsel","Q"],["Memberikan sebuah hadiah kecil yang sangat sesuai dengan minat pribadimu","G"],["Membantu menyelesaikan tugas rumah atau pekerjaanmu yang menumpuk tanpa diminta","T"]]},
-  {q:"Saat seorang sahabat sedang melewati masa sulit, respon alamimu adalah...",o:[["Menulis pesan panjang penuh kata-kata penyemangat dan validasi","W"],["Mengajaknya bertemu untuk duduk bersama, mendengarkan ceritanya dengan utuh","Q"],["Membelikan makanan atau minuman kesukaannya untuk sedikit menghibur","G"],["Menawarkan bantuan nyata untuk meringankan beban pekerjaannya","T"]]},
-  {q:"Dalam sebuah hubungan atau pertemanan akrab, hal yang paling mengecewakanmu adalah...",o:[["Kata-kata kritik yang kasar, sinis, atau meremehkan usahamu","W"],["Seseorang yang selalu terdistraksi gawai saat kalian sedang berbicara berdua","Q"],["Momen spesial yang terlewat tanpa ada ingatan atau gestur perhatian kecil sama sekali","G"],["Janji bantuan yang terus diulur-ulur dan akhirnya dibatalkan sepihak","T"]]},
-  {q:"Perayaan ulang tahun yang paling berkesan bagimu adalah ketika...",o:[["Menerima kartu ucapan yang ditulis dengan tangan dan kata-kata tulus","W"],["Dapat menghabiskan waktu berkualitas seharian bersama orang-orang tersayang","Q"],["Diberi kejutan berupa barang yang sudah lama kamu dambakan secara diam-diam","G"],["Ada seseorang yang mengurus semua kerepotan persiapan sehingga kamu bisa istirahat","T"]]},
-  {q:"Cara paling natural bagimu untuk menunjukkan rasa peduli kepada orang lain...",o:[["Sering mengabari dan mengingatkan hal-hal baik tentang mereka lewat teks","W"],["Mengajak mereka jalan santai atau sekadar duduk hening bersama","Q"],["Mencari hadiah yang punya makna simbolik khusus untuk diberikan","G"],["Merawat mereka saat sakit atau membantu merapikan sesuatu untuk mereka","T"]]},
-  {q:"Ketika ada perselisihan paham, kamu paling merasa damai kembali jika...",o:[["Kalian saling meminta maaf secara lisan dan menegaskan kembali komitmen bersama","W"],["Duduk bersama dengan tenang tanpa terburu-buru sampai kedua belah pihak merasa dipahami","Q"],["Ada gestur damai simbolik, seperti dibawakan segelas kopi atau camilan kecil","G"],["Pihak lain menunjukkan perubahan sikap nyata melalui tindakan sehari-hari","T"]]},
-  {q:"Hal kecil apa yang sanggup membuat harimu langsung cerah?",o:[["Mendengar seseorang berkata: 'Aku bangga padamu dan caramu berproses.'","W"],["Seseorang mematikan notifikasi HP dan menatap matamu dengan penuh perhatian saat bicara","Q"],["Melihat benda kecil di meja pemberian teman yang mengingatkan pada momen lucu bersama","G"],["Menemukan seseorang telah mencucikan piring atau menyelesaikan tugas yang kamu benci","T"]]},
-  {q:"Bentuk kepedulian dari rekan kerja atau tim yang paling kamu hargai adalah...",o:[["Apresiasi verbal yang tulus di hadapan forum atau pesan pribadi yang suportif","W"],["Ajakan makan siang bersama sambil ngobrol santai tanpa membahas pekerjaan","Q"],["Camilan atau oleh-oleh kecil yang mereka bawa khusus dari perjalanan mereka","G"],["Inisiatif mereka memegang bagian tugas yang berat saat kamu kewalahan","T"]]}
-];
-var BKR={
-  W:["Kata-Kata Penegasan (Words of Affirmation)","Bagi dirimu, kata-kata bukan sekadar pemanis; ucapan tulus, apresiasi spesifik, dan validasi verbal memberi bahan bakar emosional yang besar. Tips hubungan: Jangan ragu mengomunikasikan bahwa kamu sangat menghargai pujian terbuka, dan latih diri untuk memberi penguatan yang sama."],
-  Q:["Waktu Berkualitas (Quality Time)","Kamu merasa paling dicintai dan dihargai saat menerima kehadiran utuh dan perhatian tak terbagi. Setengah jam percakapan mendalam jauh lebih bernilai bagimu daripada seharian bersama namun diselingi distraksi. Tips: Jadwalkan momen bebas gawai dengan orang terdekat."],
-  G:["Hadiah & Gestur Simbolik (Receiving Gifts)","Bukan tentang nilai nominal atau kemewahan materi, melainkan pikiran dan kepedulian yang terkandung di baliknya: 'Aku melihat ini dan memikirkanmu.' Hadiah bagimu adalah representasi visual cinta. Tips: Simpan catatan kecil tentang kesukaan orang terdekatmu."],
-  T:["Tindakan Nyata (Acts of Service)","Bagimu, tindakan berbicara jauh lebih lantang daripada sekadar kata-kata manis. Bantuan konkret yang meringankan beban hidup sehari-hari membuatmu merasa benar-benar dijaga dan dihargai. Tips: Komunikasikan secara jelas bantuan apa yang paling kamu butuhkan saat lelah."]
 };
 
 // 5. Tes Cara Menghadapi Tekanan (Coping Style)
@@ -809,34 +912,40 @@ function menu(){
   tb.innerHTML=
     '<div class="test-grid">'+
       '<div class="tcard">'+
-        '<div class="badge">Model Psikologi Ilmiah</div>'+
+        '<div class="badge">Karakter & Psikologi</div>'+
         '<h3>Kepribadian Big Five</h3>'+
-        '<p>10 pernyataan singkat untuk memetakan 5 dimensi utama: Keterbukaan, Ketelitian, Ekstraversi, Keramahan, & Kestabilan Emosi.</p>'+
+        '<p>10 butir ilmiah untuk memetakan 5 pilar kepribadian: Keterbukaan, Ketelitian, Ekstraversi, Keramahan, & Kestabilan Emosi.</p>'+
         '<button class="btn fill tgo" data-t="b5">Mulai Tes</button>'+
       '</div>'+
       '<div class="tcard">'+
-        '<div class="badge">Eksplorasi Kreatif</div>'+
-        '<h3>Tipe Seniman Apakah Kamu?</h3>'+
-        '<p>6 pertanyaan seru untuk menemukan gaya berkaryamu: Sang Penjelajah, Sang Pengamat, Sang Pemberontak, atau Sang Perajin.</p>'+
-        '<button class="btn fill tgo" data-t="art">Mulai Tes</button>'+
-      '</div>'+
-      '<div class="tcard">'+
-        '<div class="badge">Optimalisasi Diri</div>'+
-        '<h3>Gaya Belajar Dominan (VARK)</h3>'+
-        '<p>8 pertanyaan untuk memahami caramu paling efektif menyerap informasi: Visual, Auditori, Baca-Tulis, atau Kinestetik.</p>'+
-        '<button class="btn fill tgo" data-t="gb">Mulai Tes</button>'+
-      '</div>'+
-      '<div class="tcard">'+
-        '<div class="badge">Relasi & Empati</div>'+
-        '<h3>Bahasa Apresiasi & Kasih</h3>'+
-        '<p>8 pertanyaan tentang caramu merasa dihargai dan bagaimana caramu mengekspresikan perhatian kepada orang sekitar.</p>'+
-        '<button class="btn fill tgo" data-t="bk">Mulai Tes</button>'+
-      '</div>'+
-      '<div class="tcard">'+
-        '<div class="badge">Resiliensi Mental</div>'+
-        '<h3>Cara Menghadapi Tekanan</h3>'+
-        '<p>6 pertanyaan untuk mengenali gaya coping yang biasa kamu pakai saat menghadapi situasi krisis atau stres berat.</p>'+
+        '<div class="badge">Resiliensi & Regulasi Emosi</div>'+
+        '<h3>Menghadapi Tekanan & Stres</h3>'+
+        '<p>6 pertanyaan untuk mengenali gaya coping pribadimu saat menghadapi situasi sulit atau krisis.</p>'+
         '<button class="btn fill tgo" data-t="ct">Mulai Tes</button>'+
+      '</div>'+
+      '<div class="tcard">'+
+        '<div class="badge">Empati & Membantu Sesama</div>'+
+        '<h3>Gaya Mendukung Orang Lain</h3>'+
+        '<p>6 pertanyaan untuk menemukan cara paling alami dan bermakna bagimu saat menolong teman yang sedang terpuruk.</p>'+
+        '<button class="btn fill tgo" data-t="em">Mulai Tes</button>'+
+      '</div>'+
+      '<div class="tcard">'+
+        '<div class="badge">Relasi Antarpribadi</div>'+
+        '<h3>Komunikasi & Resolusi Konflik</h3>'+
+        '<p>6 pertanyaan untuk memahami caramu bersikap saat ada perbedaan pendapat dan menjaga keharmonisan hubungan.</p>'+
+        '<button class="btn fill tgo" data-t="kf">Mulai Tes</button>'+
+      '</div>'+
+      '<div class="tcard">'+
+        '<div class="badge">Produktivitas & Disiplin</div>'+
+        '<h3>Mengurai Prokrastinasi</h3>'+
+        '<p>6 pertanyaan untuk menelusuri akar kebiasaan menunda pekerjaan dan langkah nyata untuk mengatasinya.</p>'+
+        '<button class="btn fill tgo" data-t="pr">Mulai Tes</button>'+
+      '</div>'+
+      '<div class="tcard">'+
+        '<div class="badge">Pengembangan Kapasitas Diri</div>'+
+        '<h3>Gaya Belajar Efektif (VARK)</h3>'+
+        '<p>8 pertanyaan untuk memahami modalitas terbaik otakmu dalam menyerap informasi: Visual, Auditori, Baca-Tulis, atau Kinestetik.</p>'+
+        '<button class="btn fill tgo" data-t="gb">Mulai Tes</button>'+
       '</div>'+
     '</div>';
 
@@ -844,10 +953,11 @@ function menu(){
     b.onclick=function(){
       var t=b.dataset.t;
       if(t==="b5") runLikert("Big Five Singkat",BIG,bigDone);
-      else if(t==="art") runChoice("Tipe Seniman",AQ,choiceDone(AT,"Hasil Tipe Seniman","Tes ini ditujukan untuk hiburan dan inspirasi berkarya, bukan penilaian psikologis mutlak."));
-      else if(t==="gb") runChoice("Gaya Belajar (VARK)",GBQ,choiceDone(GBR,"Hasil Gaya Belajar","Gaya belajar bersifat luwes; mayoritas orang menggabungkan beberapa modalitas sekaligus sesuai konteks materi."));
-      else if(t==="bk") runChoice("Bahasa Apresiasi",BKQ,choiceDone(BKR,"Hasil Bahasa Apresiasi","Konsep ini berguna sebagai pemantik diskusi dalam relasi antarpribadi dan bahan refleksi diri."));
       else if(t==="ct") runChoice("Gaya Menghadapi Tekanan",CTQ,choiceDone(CTR,"Hasil Gaya Menghadapi Tekanan","Setiap gaya coping memiliki fungsi unik; fleksibilitas memakai strategi sesuai situasi adalah kunci resiliensi."));
+      else if(t==="em") runChoice("Gaya Mendukung Sesama",EMQ,choiceDone(EMR,"Hasil Gaya Mendukung Sesama","Membantu orang lain paling efektif bila disesuaikan dengan kebutuhan mereka dan kapasitas energi pribadimu."));
+      else if(t==="kf") runChoice("Komunikasi & Resolusi Konflik",KFQ,choiceDone(KFR,"Hasil Komunikasi & Resolusi Konflik","Gaya komunikasi dapat dilatih; mengenali kecenderungan alami adalah langkah pertama membangun relasi yang sehat."));
+      else if(t==="pr") runChoice("Mengurai Prokrastinasi",PRQ,choiceDone(PRR,"Hasil Analisis Prokrastinasi","Menunda bukan cacat karakter. Mengenali pemicu emosional di baliknya membantu kita mengambil tindakan kecil yang konsisten."));
+      else if(t==="gb") runChoice("Gaya Belajar (VARK)",GBQ,choiceDone(GBR,"Hasil Gaya Belajar","Gaya belajar bersifat luwes; mayoritas orang menggabungkan beberapa modalitas sekaligus sesuai konteks materi."));
     };
   });
 }
