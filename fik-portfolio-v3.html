@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fik – Seniman, Pejalan, Pembelajar Psikologi</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ebe8e1;--card:#f5f2ec;--ink:#101114;--mute:#5d5b55;--acc:#2432ff;--disp:'Instrument Serif',Georgia,serif;--sans:'Bricolage Grotesque',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{--bg:#0e0f13;--card:#16181e;--ink:#ece9e2;--mute:#9a978f;--acc:#7a86ff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0e0f13;--card:#16181e;--ink:#ece9e2;--mute:#9a978f;--acc:#7a86ff}}
+html{scroll-padding-top:calc(56px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+a{color:inherit}:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1.5px solid var(--ink);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:8px 20px}
+.brand{font:italic 400 32px var(--disp);text-decoration:none}
+nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;font-size:15px}nav a{text-decoration:none;white-space:nowrap}nav a:hover{color:var(--acc)}
+#theme{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ink);background:none;color:var(--ink);cursor:pointer}
+.hero{max-width:1100px;margin:0 auto;padding:18px 20px 60px}
+.stage{position:relative;height:min(60svh,540px);border:1.5px solid var(--ink);background:var(--card);overflow:hidden}
+#cv{position:absolute;inset:0;width:100%;height:100%;filter:url(#goo);touch-action:pan-y;cursor:crosshair}
+.fold{position:absolute;left:50%;top:0;bottom:0;border-left:1px dashed var(--mute);opacity:.45;pointer-events:none}
+.stage .btn{position:absolute;right:12px;bottom:12px;background:var(--bg)}
+.hint{position:absolute;left:12px;top:10px;font-size:14px;color:var(--mute);pointer-events:none;max-width:60%}
+.hero h1{font:italic 400 clamp(54px,12.5vw,140px)/.92 var(--disp);margin:30px 0 16px;letter-spacing:-.02em}
+.sub{max-width:54ch;color:var(--mute);margin:0 0 24px}.sub b{color:var(--ink);font-weight:500}
+.btn{display:inline-block;border:1.5px solid var(--ink);background:none;color:inherit;padding:10px 20px;font:500 16px var(--sans);text-decoration:none;cursor:pointer}
+.btn.fill{background:var(--ink);color:var(--bg)}.btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+section{max-width:1100px;margin:0 auto;padding:72px 20px;border-top:1.5px solid var(--ink)}
+h2{font:italic 400 clamp(42px,9vw,80px)/1 var(--disp);margin:0 0 32px}
+.about{display:grid;gap:32px}
+.big{font:400 clamp(26px,4.6vw,42px)/1.2 var(--disp);margin:0 0 20px;max-width:28ch}
+.about p{max-width:58ch}
+dl{margin:0;border-top:1.5px solid var(--ink)}dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--mute)}dt{color:var(--mute)}dd{margin:0;text-align:right}
+.sheet{columns:2 150px;column-gap:14px}
+.tile{break-inside:avoid;display:block;width:100%;margin:0 0 14px;padding:0;border:1.5px solid var(--ink);background:var(--card);color:inherit;font:inherit;text-align:left;cursor:pointer}
+.tile svg,.tile img{display:block;width:100%;height:auto}
+.tile .cap{display:block;padding:9px 12px;border-top:1.5px solid var(--ink);font-size:14px;color:var(--mute);line-height:1.4}
+.tile .cap b{display:block;font:400 19px var(--disp);color:var(--ink)}
+.tile:hover,.tile:focus-visible{border-color:var(--acc)}
+.list{border-top:1.5px solid var(--ink)}
+.post{display:block;width:100%;text-align:left;background:none;color:inherit;font:inherit;border:0;border-bottom:1.5px solid var(--ink);padding:22px 8px;cursor:pointer;transition:padding .2s,background .2s}
+.post b{display:block;font:400 clamp(28px,5vw,44px)/1.1 var(--disp)}
+.post small{color:var(--mute);font-size:15px}.post span{display:block;max-width:60ch;margin-top:6px}
+.post:hover,.post:focus-visible{background:var(--ink);color:var(--bg);padding-left:20px}.post:hover small{color:inherit}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.card{border:1.5px solid var(--ink);padding:24px;background:var(--card)}
+.card h3{font:italic 400 34px/1.1 var(--disp);margin:0 0 8px}.card p{color:var(--mute);margin:0 0 16px}
+.trip{list-style:none;margin:0;padding:0}.trip li{display:grid;grid-template-columns:90px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--mute)}
+.trip i{font:italic 400 36px/1 var(--disp);color:var(--acc)}.trip b{font:400 24px var(--disp);display:block}
+.contact a.r{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:16px 0;border-bottom:1.5px solid var(--ink);text-decoration:none;font:italic 400 clamp(32px,7vw,56px)/1.1 var(--disp)}
+.contact a.r:hover{color:var(--acc)}.contact a.r span{font:400 15px var(--sans);color:var(--mute)}
+footer{max-width:1100px;margin:0 auto;padding:30px 20px 50px;border-top:1.5px solid var(--ink);color:var(--mute);font-size:15px}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(10,10,12,.92);display:none;align-items:center;justify-content:center;padding:24px}
+#lb.on{display:flex}#lb figure{margin:0;width:min(520px,100%)}#lb .fr{border:1.5px solid #ece9e2;background:#ece9e2;padding:10px}#lb svg,#lb img{display:block;width:100%;height:auto;max-height:68vh}
+#lb figcaption{color:#ece9e2;text-align:center;padding-top:12px}
+#lb button,#rd .x{border:1.5px solid currentColor;background:none;color:inherit;padding:8px 16px;font:500 15px var(--sans);cursor:pointer}
+#lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;color:#ece9e2}
+#rd{position:fixed;inset:0;z-index:30;background:var(--bg);overflow:auto;display:none;padding:calc(18px + env(safe-area-inset-top,0px)) 20px 60px}
+#rd.on{display:block}#rd article{max-width:660px;margin:0 auto}
+#rd h3{font:italic 400 clamp(40px,9vw,66px)/1 var(--disp);margin:24px 0 8px}
+#rd .meta{color:var(--acc);margin-bottom:24px}
+#rd h4{font:400 30px/1.15 var(--disp);margin:34px 0 4px}
+#rd p{font-size:18px;line-height:1.85;margin:0 0 1em}
+#rd .tip{border-left:5px solid var(--acc);padding:2px 0 2px 18px;font:italic 400 clamp(24px,4.4vw,31px)/1.3 var(--disp);margin:30px 0}
+.tests{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.panel{border:1.5px solid var(--ink);background:var(--card);padding:24px;max-width:720px}
+.prog{height:10px;border:1.5px solid var(--ink);margin-bottom:16px}.prog i{display:block;height:100%;background:var(--acc)}
+.q{font:400 clamp(26px,5vw,36px)/1.15 var(--disp);margin:8px 0 18px}
+.opt{display:block;width:100%;text-align:left;border:1.5px solid var(--ink);background:none;color:inherit;font:inherit;padding:12px 16px;margin:0 0 10px;cursor:pointer}
+.opt:hover,.opt:focus-visible{background:var(--ink);color:var(--bg)}
+.bar{height:12px;border:1.5px solid var(--ink);margin:6px 0 8px}.bar i{display:block;height:100%;background:var(--acc)}
+.res h3{font:italic 400 38px/1.1 var(--disp);margin:0 0 18px}.tr{margin:0 0 20px}.tr b{display:flex;justify-content:space-between;font-weight:500}
+.note{font-size:14px;color:var(--mute);margin:18px 0}
+@media(min-width:800px){.about{grid-template-columns:5fr 3fr;gap:60px}.sheet{columns:3}body{font-size:18px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="goo"><feGaussianBlur stdDeviation="5"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 26 -10"/></filter></svg>
+<header>
+  <a class="brand" href="#top" aria-label="Ke atas">Fik</a>
+  <nav aria-label="Menu utama"><a href="#tentang">Tentang</a><a href="#karya">Karya</a><a href="#tes">Tes</a><a href="#tulisan">Tulisan</a><a href="#proyek">Proyek</a><a href="#kontak">Kontak</a></nav>
+  <button id="theme" aria-label="Ganti mode terang atau gelap">◐</button>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="stage">
+    <canvas id="cv" aria-label="Noda tinta simetris yang bisa digambar sendiri"></canvas>
+    <div class="fold"></div>
+    <span class="hint">kertasnya terlipat di tengah. Tekan dan gores untuk menambah tinta.</span>
+    <button class="btn" id="again">blot baru</button>
+  </div>
+  <h1>Apa yang kamu lihat?</h1>
+  <!-- GANTI: perkenalan singkat -->
+  <p class="sub"><b>Aku Fik.</b> Pelukis, pejalan, dan pembelajar psikologi. Noda tinta di atas hanya permainan, bukan tes psikologi sungguhan. Lihat sebentar, lalu tanyakan kenapa kamu melihat itu.</p>
+  <div class="row"><a class="btn fill" href="#karya">Lihat karya</a><a class="btn" href="#tulisan">Baca tulisan</a></div>
+</div>
+
+<section id="tentang">
+  <h2>Tentang</h2>
+  <div class="about"><div>
+    <!-- GANTI: tulis dengan kata-katamu sendiri -->
+    <p class="big">Aku tertarik pada satu pertanyaan: kenapa kita melihat, merasa, dan membuat sesuatu dengan cara yang berbeda-beda.</p>
+    <p>Lewat lukisan, perjalanan, dan psikologi, aku mencari jawabannya sedikit demi sedikit. Di sini aku mengumpulkan karya, tulisan, dan proyek bersama teman-teman kreatif.</p>
+    <p>Travel is something worthwhile.</p>
+  </div>
+  <dl><!-- GANTI --><div><dt>Berbasis di</dt><dd>Indonesia</dd></div><div><dt>Media</dt><dd>Cat minyak, akrilik, sketsa</dd></div><div><dt>Belajar</dt><dd>Psikologi</dd></div><div><dt>Proyek</dt><dd>Ruang Kreativitas, Retroloka</dd></div></dl></div>
+</section>
+
+<section id="karya">
+  <h2>Karya</h2>
+  <!-- GANTI: ini lukisan contoh buatan kode. Untuk foto asli, tambahkan src:"foto.jpg" pada karya di daftar works. -->
+  <div class="sheet" id="sheet"></div>
+</section>
+
+<section id="tes">
+  <h2>Tes</h2>
+  <p style="max-width:56ch;color:var(--mute);margin:-12px 0 30px">Dua tes singkat untuk mengenal dirimu lebih baik. Jawabanmu tidak dikirim ke mana pun dan hanya diproses di perangkatmu.</p>
+  <div id="tbox"></div>
+</section>
+
+<section id="tulisan">
+  <h2>Tulisan</h2>
+  <p style="max-width:56ch;color:var(--mute);margin:-12px 0 30px">Catatan tentang psikologi, seni, dan cara manusia berpikir dan merasa. Ditulis sebagai pembelajar, bukan psikolog, dan tidak menggantikan bantuan profesional.</p>
+  <div class="list" id="list"></div>
+  <div id="rd" role="dialog" aria-modal="true" aria-label="Artikel"></div>
+</section>
+
+<section id="proyek">
+  <h2>Proyek</h2>
+  <div class="cards">
+    <div class="card"><h3>Ruang Kreativitas</h3><p>Wadah bagi seniman dan pekerja kreatif untuk berkumpul, belajar, dan memamerkan karya. <!-- GANTI --></p><a class="btn" href="https://instagram.com/ruangkreativitas.id" target="_blank" rel="noopener">@ruangkreativitas.id</a></div>
+    <div class="card"><h3>Retroloka</h3><p>Ruang bernuansa retro tempat barang, musik, dan cerita lama bertemu orang baru. <!-- GANTI --></p><a class="btn" href="https://instagram.com/retroloka" target="_blank" rel="noopener">@retroloka</a></div>
+  </div>
+</section>
+
+<section id="perjalanan">
+  <h2>Perjalanan</h2>
+  <ul class="trip"><!-- GANTI: tempat, tahun, cerita -->
+    <li><i>2024</i><div><b>Galeri kota</b>Pameran potret dan pemandangan yang membuat saya berhenti lama.</div></li>
+    <li><i>2025</i><div><b>Workshop topeng</b>Belajar bagaimana satu topeng bisa menyimpan banyak ekspresi.</div></li>
+    <li><i>2026</i><div><b>Jalan berikutnya</b>Masih kosong. Kamera dan buku sketsa sudah di tas.</div></li>
+  </ul>
+</section>
+
+<section id="kontak" class="contact">
+  <h2>Mari ngobrol</h2>
+  <a class="r" href="https://instagram.com/sebutsaja_fik" target="_blank" rel="noopener">Instagram <span>@sebutsaja_fik</span></a>
+  <!-- GANTI: email dan WhatsApp -->
+  <a class="r" href="mailto:emailkamu@example.com">Email <span>emailkamu@example.com</span></a>
+  <a class="r" href="https://wa.me/6281234567890" target="_blank" rel="noopener">WhatsApp <span>0812-3456-7890</span></a>
+</section>
+</main>
+<footer>© <span id="yr"></span> Fik. Dibuat dengan kopi, tinta, dan rasa ingin tahu.</footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Pratinjau karya"><button aria-label="Tutup">tutup</button><figure><div class="fr" id="lbArt"></div><figcaption id="lbCap"></figcaption></figure></div>
+
+<script>
+var still=matchMedia("(prefers-reduced-motion: reduce)").matches,root=document.documentElement;
+function $(i){return document.getElementById(i)}
+/* ===== Noda tinta simetris ===== */
+var cv=$("cv"),cx=cv.getContext("2d"),W=0,H=0,raf=0;
+function css(n){return getComputedStyle(root).getPropertyValue(n).trim()}
+function size(){var r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,1.5);W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0);cx.lineCap="round"}
+function dot(x,y,r,c){cx.fillStyle=c;cx.beginPath();cx.arc(x,y,r,0,7);cx.fill();cx.beginPath();cx.arc(W-x,y,r,0,7);cx.fill()}
+function blot(){
+  cancelAnimationFrame(raf);cx.clearRect(0,0,W,H);
+  var ink=css("--ink"),ac=css("--acc"),u=Math.min(W,H),ws=[];
+  for(var k=0;k<4;k++)ws.push({x:W*(.4+Math.random()*.1),y:H*(.18+k*.22),a:Math.random()*6.28});
+  var step=0,total=46;
+  function go(){
+    ws.forEach(function(w){
+      w.a+=(Math.random()-.5)*1.4;w.x+=Math.cos(w.a)*u*.04;w.y+=Math.sin(w.a)*u*.04;
+      if(w.x<W*.08||w.x>W*.5)w.a=Math.PI-w.a;if(w.y<H*.06||w.y>H*.94)w.a=-w.a;
+      w.x=Math.max(W*.06,Math.min(W*.5,w.x));w.y=Math.max(H*.05,Math.min(H*.95,w.y));
+      dot(w.x,w.y,u*(.03+Math.random()*.04)*(1-step/total*.4),Math.random()<.12?ac:ink);
+      if(Math.random()<.35)dot(w.x+(Math.random()-.5)*u*.35,w.y+(Math.random()-.5)*u*.35,2+Math.random()*5,ink)});
+    step++;if(step<total){if(!still)raf=requestAnimationFrame(go);else go()}}
+  go();
+}
+size();blot();
+var lastW=W;addEventListener("resize",function(){if(Math.abs(cv.getBoundingClientRect().width-lastW)>2){size();blot();lastW=W}});
+$("again").onclick=blot;
+var last=null;
+function pt(e){var r=cv.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top]}
+cv.addEventListener("pointerdown",function(e){last=pt(e)});
+addEventListener("pointerup",function(){last=null});
+cv.addEventListener("pointermove",function(e){if(!last)return;var p=pt(e);cx.strokeStyle=css("--ink");cx.lineWidth=16;
+  cx.beginPath();cx.moveTo(last[0],last[1]);cx.lineTo(p[0],p[1]);cx.moveTo(W-last[0],last[1]);cx.lineTo(W-p[0],p[1]);cx.stroke();last=p});
+$("theme").onclick=function(){var d=css("--bg")==="#0e0f13";root.setAttribute("data-theme",d?"light":"dark");blot()};
+
+function rnd(s){return function(){s=s*16807%2147483647;return(s-1)/2147483646}}
+function paint(w,i,tag){
+  var r=rnd(i*977+13),p=w.p,h=w.h,id="g"+tag+i,o='<svg viewBox="0 0 100 '+h+'" preserveAspectRatio="xMidYMid slice" role="img" aria-label="'+w.t+'"><defs><filter id="'+id+'"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .22 0"/></filter></defs><rect width="100" height="'+h+'" fill="'+p[0]+'"/>',j,y,x;
+  if(w.k=="land"){o+='<circle cx="'+(60+r()*25)+'" cy="'+h*.22+'" r="11" fill="'+p[3]+'"/>';
+    for(j=0;j<5;j++){y=h*(.38+j*.12);o+='<path d="M0 '+y+' Q25 '+(y-8-r()*8)+' 50 '+y+' T100 '+(y-4+r()*8)+' V'+h+' H0Z" fill="'+p[(j+1)%p.length]+'" opacity=".92"/>'}}
+  else if(w.k=="mask"){o+='<ellipse cx="50" cy="'+h*.5+'" rx="32" ry="'+h*.36+'" fill="'+p[1]+'"/><path d="M26 '+h*.4+' Q38 '+h*.33+' 46 '+h*.42+' Q38 '+h*.47+' 26 '+h*.4+'ZM74 '+h*.4+' Q62 '+h*.33+' 54 '+h*.42+' Q62 '+h*.47+' 74 '+h*.4+'Z" fill="'+p[0]+'"/><path d="M32 '+h*.62+' Q50 '+h*.78+' 68 '+h*.62+' Q50 '+h*.68+' 32 '+h*.62+'Z" fill="'+p[2]+'"/><path d="M50 '+h*.44+' L44 '+h*.58+' H56Z" fill="'+p[3]+'" opacity=".7"/>'}
+  else{for(j=0;j<8;j++)o+='<ellipse cx="'+r()*100+'" cy="'+r()*h+'" rx="'+(10+r()*22)+'" ry="'+(8+r()*18)+'" fill="'+p[1+j%(p.length-1)]+'" opacity=".8" transform="rotate('+r()*90+' 50 '+h/2+')"/>'}
+  for(j=0;j<5;j++){x=r()*90;y=r()*h;o+='<path d="M'+x+' '+y+' q'+(r()*30-5)+' '+(r()*20-10)+' '+(10+r()*25)+' '+(r()*14-7)+'" stroke="'+p[(j+2)%p.length]+'" stroke-width="'+(2+r()*3)+'" stroke-linecap="round" fill="none" opacity=".75"/>'}
+  return o+'<rect width="100" height="'+h+'" filter="url(#'+id+')"/></svg>'}
+// GANTI: judul, jenis (land/mask/abs), warna p, tinggi h, lebar w, keterangan m. Foto asli: tambahkan src:"foto.jpg"
+var works=[
+ {t:"Sawah di Tepi Sungai",m:"Cat minyak di kanvas",k:"land",h:80,w:340,r:"-1.5deg",p:["#cfe3ee","#7fae9a","#e0c24a","#fff1b0","#3f7fb5","#4f8a6b"]},
+ {t:"Topeng Tawa",m:"Akrilik di kayu",k:"mask",h:125,w:230,r:"2deg",p:["#241c16","#e9dcc3","#b8553a","#3f7fb5"]},
+ {t:"Rusa Warna-warni",m:"Akrilik di kanvas",k:"abs",h:110,w:260,r:"-2deg",p:["#1f2a3a","#e8812a","#7a56a8","#e0a526","#5f9a4a","#c8402f"]},
+ {t:"Dua Kuda",m:"Arang dan cat air",k:"abs",h:100,w:300,r:"1.2deg",p:["#cfc8b8","#3a3a38","#6b6a66","#8d8a80"]},
+ {t:"Senja di Pegunungan",m:"Cat minyak di kanvas",k:"land",h:120,w:240,r:"-1deg",p:["#f0b07a","#b8553a","#7a3b3a","#ffe2a0","#4a3350","#2c2535"]}
+];
+
+function art(w,i,t){return w.src?'<img src="'+w.src+'" alt="'+w.t+'">':paint(w,i,t)}
+var sheet=$("sheet"),lb=$("lb");
+works.forEach(function(w,i){
+  var b=document.createElement("button");b.className="tile";b.setAttribute("aria-label","Buka "+w.t);
+  b.innerHTML=art(w,i,"s")+'<span class="cap"><b>'+w.t+'</b>'+w.m+'</span>';
+  b.onclick=function(){$("lbArt").innerHTML=art(w,i,"l");$("lbCap").textContent=w.t+", "+w.m;lb.classList.add("on");lb.querySelector("button").focus()};
+  sheet.appendChild(b)});
+lb.onclick=function(e){if(e.target===lb||e.target.tagName==="BUTTON")lb.classList.remove("on")};
+
+var posts=[
+{t:"Prokrastinasi bukan soal malas",tag:"Psikologi harian",min:4,d:"Menunda sering kali bukan masalah disiplin. Ada alasan emosional di baliknya, dan ada cara kecil untuk mulai.",b:[
+["p","Kita sering menyebut orang yang menunda sebagai pemalas. Penelitian tentang prokrastinasi menunjukkan gambaran yang lebih rumit: menunda sering berkaitan dengan cara kita menghadapi perasaan tidak nyaman, seperti cemas, bosan, atau takut hasilnya tidak bagus."],
+["h","Kenapa kita menunda"],["p","Saat sebuah tugas memunculkan perasaan tidak enak, menghindarinya memberi kelegaan sesaat. Kelegaan itu terasa seperti hadiah, sehingga pola yang sama cenderung berulang. Masalahnya, tugasnya tetap menunggu dan rasa bersalahnya bertambah."],
+["h","Tiga langkah kecil yang bisa dicoba"],
+["p","Pertama, kecilkan tugasnya. Bukan menyelesaikan lukisan, tapi cukup menyiapkan palet."],
+["p","Kedua, pakai aturan jika-maka: jika sudah selesai makan malam, maka aku duduk di depan kanvas selama sepuluh menit. Peneliti menyebutnya implementation intentions, dan studi-studi menunjukkan rencana yang spesifik seperti ini membantu orang bertindak sesuai niatnya."],
+["p","Ketiga, bersikap baik pada diri sendiri. Menyalahkan diri setelah menunda cenderung membuat kita menunda lebih lama, sedangkan memaafkan diri berkaitan dengan lebih sedikit penundaan berikutnya."],
+["q","Memulai adalah bagian tersulit. Sepuluh menit pertama biasanya sudah mengubah suasana."],
+["p","Kalau menunda sudah sangat mengganggu hidupmu, bicarakan dengan psikolog atau konselor. Kadang ada hal lain di baliknya, seperti kecemasan atau kelelahan."]]},
+{t:"Psikologi warna: yang benar dan yang hanya mitos",tag:"Seni dan psikologi",min:5,d:"Merah itu marah, biru itu tenang? Riset menunjukkan hubungan warna dan perasaan jauh lebih longgar dari yang sering dikira.",b:[
+["p","Warna sering dijual lewat klaim yang pasti: merah membuat lapar, biru membuat tenang. Sebagai orang yang melukis, aku ingin tahu seberapa benar itu."],
+["h","Yang cukup masuk akal"],["p","Orang memang punya asosiasi warna. Warna hangat dan terang sering terasa energik, sedangkan warna gelap dan dingin sering terasa lebih tenang atau muram. Tapi asosiasi itu bergantung pada budaya, pengalaman pribadi, dan konteks. Putih, misalnya, identik dengan kebersihan di banyak tempat, tetapi di sebagian budaya dipakai dalam suasana duka."],
+["h","Yang sering berlebihan"],["p","Klaim bahwa satu warna selalu memunculkan satu emosi tidak didukung bukti yang kuat. Beberapa temuan terkenal, misalnya soal warna merah dan performa, masih diperdebatkan dan efeknya biasanya kecil. Warna juga bekerja bersama hal lain seperti kontras, bentuk, dan isi gambar."],
+["h","Artinya bagi pelukis"],["p","Warna adalah alat, bukan kode rahasia. Kamu tidak harus mengikuti aturan seperti biru berarti sedih. Tanyakan dulu apa yang sedang dimainkan warna itu di lukisanmu: kontras, suasana, atau kenangan pribadi."],
+["q","Makna sebuah warna lahir dari konteks, bukan dari tabel."]]},
+{t:"Kenapa menggambar bisa terasa menenangkan",tag:"Kesehatan mental",min:5,d:"Dari kondisi flow sampai riset tentang berkarya. Apa yang diketahui, dan apa bedanya dengan terapi seni.",b:[
+["p","Banyak orang merasa lebih tenang setelah menggambar atau melukis. Ada beberapa penjelasan yang diteliti, meski belum semuanya pasti."],
+["h","Flow"],["p","Psikolog Mihaly Csikszentmihalyi menggambarkan flow: keadaan tenggelam dalam kegiatan yang tantangannya pas dengan kemampuanmu. Waktu terasa cepat dan pikiran yang berputar-putar mereda. Melukis sering memicunya."],
+["h","Apa kata penelitian"],["p","Satu studi kecil menemukan bahwa sekitar 45 menit berkarya seni dikaitkan dengan turunnya kadar kortisol, hormon yang berhubungan dengan stres, pada sebagian besar peserta, apa pun tingkat kemampuan mereka. Itu hasil awal dengan jumlah peserta terbatas, jadi jangan dibaca sebagai jaminan."],
+["h","Berkarya bukan terapi seni"],["p","Menggambar untuk merawat diri itu baik. Terapi seni adalah layanan yang diberikan terapis terlatih untuk kebutuhan tertentu. Keduanya berbeda, dan yang pertama tidak menggantikan yang kedua."],
+["h","Cara mencobanya"],["p","Sediakan 15 sampai 20 menit, pilih alat yang gampang, dan jangan menilai hasilnya. Yang dicari adalah prosesnya, bukan karya untuk dipamerkan."],
+["q","Kalau kamu merasa tertekan terus-menerus, temui psikolog atau konselor. Menggambar bisa menemani, tapi tidak menggantikan bantuan profesional."]]},
+{t:"Rasa takjub dan alasan perjalanan terasa berarti",tag:"Psikologi perjalanan",min:4,d:"Hal baru, rasa takjub, dan ingatan. Kenapa satu perjalanan bisa lebih berkesan daripada berminggu-minggu rutinitas.",b:[
+["p","Kenapa seminggu liburan sering lebih kita ingat daripada sebulan rutinitas? Psikologi punya beberapa petunjuk."],
+["h","Hal baru memperkaya ingatan"],["p","Pengalaman baru menuntut perhatian lebih, sehingga cenderung meninggalkan ingatan yang lebih kaya. Hari-hari yang mirip satu sama lain mudah menyatu dalam kenangan. Itu sebabnya perjalanan sering terasa panjang ketika dikenang."],
+["h","Rasa takjub"],["p","Psikolog seperti Dacher Keltner mempelajari awe, rasa takjub di depan sesuatu yang luas atau melampaui diri kita, misalnya pemandangan, karya seni, atau musik. Sejumlah penelitian mengaitkannya dengan rasa lebih terhubung pada orang lain dan sikap lebih rendah hati. Hasilnya menarik, tapi masih terus diteliti."],
+["h","Adaptasi hedonis"],["p","Kita cepat terbiasa dengan hal yang menyenangkan, dan itu disebut adaptasi hedonis. Hal baru bisa memperlambatnya, tapi tidak harus jauh. Menelusuri sudut kotamu sendiri dengan penuh perhatian pun bisa."],
+["q","Takjub tidak selalu butuh tiket pesawat. Kadang cukup berhenti dan benar-benar melihat."]]}
+];
+var list=$("list"),rd=$("rd");
+posts.forEach(function(a){var b=document.createElement("button");b.className="post";
+  b.innerHTML="<small>"+a.tag+", "+a.min+" menit baca</small><b>"+a.t+"</b><span>"+a.d+"</span>";
+  b.onclick=function(){var h="<article><button class='x'>tutup</button><h3>"+a.t+"</h3><div class='meta'>"+a.tag+", "+a.min+" menit baca</div>";
+    a.b.forEach(function(l){h+=l[0]=="h"?"<h4>"+l[1]+"</h4>":l[0]=="q"?"<div class='tip'>"+l[1]+"</div>":"<p>"+l[1]+"</p>"});
+    rd.innerHTML=h+"<p style='margin-top:36px'><button class='x'>kembali ke website</button></p></article>";rd.classList.add("on");rd.scrollTop=0;rd.querySelector(".x").focus()};
+  list.appendChild(b)});
+rd.onclick=function(e){if(e.target.classList.contains("x"))rd.classList.remove("on")};
+addEventListener("keydown",function(e){if(e.key==="Escape"){rd.classList.remove("on");lb.classList.remove("on")}});
+/* ===== Tes kepribadian ===== */
+var tb=$("tbox"),LIK=[["Sangat tidak setuju",1],["Tidak setuju",2],["Netral",3],["Setuju",4],["Sangat setuju",5]];
+// Pernyataan Big Five: [sifat, teks, dibalik?]. GANTI jika ingin menambah atau mengubah pertanyaan.
+var BIG=[["E","Saya mudah bersemangat saat bersama banyak orang.",0],["E","Di keramaian, saya lebih suka diam dan menyendiri.",1],["A","Saya peduli dan mudah percaya pada orang lain.",0],["A","Saya sering berdebat atau berselisih dengan orang lain.",1],["C","Saya teratur dan bisa diandalkan.",0],["C","Saya sering lalai atau menunda hal yang penting.",1],["S","Saya mudah cemas dan khawatir.",1],["S","Saya tenang dan jarang terganggu oleh perasaan sendiri.",0],["O","Saya senang mencoba ide dan pengalaman baru.",0],["O","Saya lebih nyaman dengan hal-hal yang sudah biasa.",1]];
+var TR={O:["Keterbukaan","Penasaran, suka ide, seni, dan pengalaman baru.","Menyukai hal yang jelas, praktis, dan sudah teruji."],C:["Ketelitian","Terencana, konsisten, dan bisa diandalkan.","Fleksibel dan spontan, nyaman dengan rencana yang longgar."],E:["Ekstraversi","Mengisi energi dari kebersamaan dan suasana ramai.","Mengisi energi dari waktu sendiri dan suasana tenang."],A:["Keramahan","Hangat, kooperatif, dan mudah berempati.","Blak-blakan, kritis, dan berani berbeda pendapat."],S:["Kestabilan emosi","Cenderung tenang saat menghadapi tekanan.","Peka terhadap tekanan, sehingga sering lebih waspada dan penuh pertimbangan."]};
+var AQ=[
+{q:"Hari libur yang paling pas buatmu?",o:[["Pergi ke tempat yang belum pernah kudatangi","J"],["Duduk di kafe dan memperhatikan orang lewat","P"],["Membongkar barang bekas jadi sesuatu yang aneh","B"],["Menyelesaikan proyek kecil sampai rapi","R"]]},
+{q:"Kamu menemukan kanvas kosong. Langkah pertamamu?",o:[["Mencari inspirasi dari tempat dan cerita baru","J"],["Mengamati dulu sampai tahu apa yang ingin kutangkap","P"],["Langsung menggores tanpa rencana","B"],["Membuat sketsa dan rencana warna","R"]]},
+{q:"Pujian yang paling kamu suka?",o:[["Karyamu membawaku ke tempat lain","J"],["Kamu peka melihat hal-hal kecil","P"],["Aku belum pernah melihat yang seperti ini","B"],["Detailnya rapi sekali","R"]]},
+{q:"Benda yang selalu ada di tasmu?",o:[["Buku catatan perjalanan","J"],["Kamera atau buku sketsa kecil","P"],["Barang acak yang kutemukan di jalan","B"],["Set alat yang tertata rapi","R"]]},
+{q:"Saat karyamu gagal, kamu...",o:[["Pindah ke tempat baru dan mulai lagi","J"],["Mengamati apa yang salah, lalu belajar","P"],["Menimpanya dan membuat sesuatu yang lain","B"],["Memperbaikinya sampai benar","R"]]},
+{q:"Musik apa yang menemanimu berkarya?",o:[["Lagu dari tempat yang pernah kukunjungi","J"],["Instrumental yang tenang","P"],["Apa saja, makin aneh makin bagus","B"],["Playlist yang sama berulang-ulang","R"]]}];
+var AT={J:["Sang Penjelajah","Inspirasimu datang dari jalan, dan karyamu hidup dari tempat dan cerita baru. Tips: tangkap suasana langsung di tempat lewat sketsa kecil, jangan menunggu sampai pulang."],P:["Sang Pengamat","Kamu peka pada hal kecil yang sering dilewatkan orang lain. Tips: kumpulkan sketsa cepat dari hal sehari-hari, itu bahan karya besarmu nanti."],B:["Sang Pemberontak","Kamu suka melanggar aturan dan mencoba yang belum ada. Tips: beri dirimu batasan yang lucu, misalnya hanya tiga warna, supaya eksperimenmu makin tajam."],R:["Sang Perajin","Kamu menikmati proses dan ketelitian. Tips: sesekali selesaikan satu karya dengan cepat dan berantakan, supaya tidak terjebak mengejar kesempurnaan."]};
+function run(name,qs,done){var i=0,ans=[];(function show(){var q=qs[i];
+ tb.innerHTML='<div class="panel"><div class="prog"><i style="width:'+(i/qs.length*100)+'%"></i></div><small>'+name+', '+(i+1)+' dari '+qs.length+'</small><p class="q">'+q.q+'</p>'+q.o.map(function(o,j){return '<button class="opt" data-j="'+j+'">'+o[0]+'</button>'}).join('')+'<button class="btn" id="bk">batal</button></div>';
+ tb.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){ans.push(q.o[+b.dataset.j][1]);i++;if(i<qs.length)show();else done(ans)}});
+ $("bk").onclick=menu})()}
+function finish(title,html,txt,note){
+ tb.innerHTML='<div class="panel res"><h3>'+title+'</h3>'+html+'<p class="note">'+note+'</p><div class="row"><button class="btn fill" id="cp">salin hasil</button><button class="btn" id="mn">tes lain</button></div></div>';
+ $("mn").onclick=menu;$("cp").onclick=function(){try{navigator.clipboard.writeText(txt+location.href).then(function(){$("cp").textContent="tersalin"})}catch(e){$("cp").textContent="gagal menyalin"}};
+ tb.scrollIntoView({block:"nearest"})}
+function bigDone(ans){var sc={},h="",txt="Hasil Big Five singkatku:\n";
+ ans.forEach(function(v,k){var b=BIG[k];(sc[b[0]]=sc[b[0]]||[]).push(b[2]?6-v:v)});
+ ["O","C","E","A","S"].forEach(function(k){var a=(sc[k][0]+sc[k][1])/2,p=Math.round((a-1)/4*100),d=TR[k],t=p>=60?d[1]:p<=40?d[2]:"Di tengah: kamu luwes dan bisa condong ke dua sisi sesuai situasi.";
+  h+='<div class="tr"><b><span>'+d[0]+'</span><span>'+p+'%</span></b><div class="bar"><i style="width:'+p+'%"></i></div>'+t+'</div>';txt+=d[0]+": "+p+"%\n"});
+ finish("Hasil Big Five singkatmu",h,txt,"Tes ini hanya 10 pertanyaan, jadi gambarannya kasar. Persentase menunjukkan posisimu pada skala jawabanmu sendiri, bukan perbandingan dengan orang lain. Ini bukan diagnosis, cukup sebagai bahan renungan.")}
+function artDone(ans){var c={},best="J";ans.forEach(function(k){c[k]=(c[k]||0)+1});for(var k in c)if(c[k]>c[best]||!c[best])best=k;
+ var d=AT[best];finish(d[0],'<p class="big" style="font-size:26px">'+d[1]+'</p>',"Aku "+d[0]+" di tes seniman Fik. ","Ini hanya hiburan, bukan penilaian psikologis.")}
+function menu(){tb.innerHTML='<div class="tests"><div class="card"><h3>Tes Kepribadian Big Five</h3><p>10 pertanyaan, sekitar 2 menit. Big Five lebih banyak dipakai dalam riset daripada tes 16 tipe yang populer di media sosial.</p><button class="btn fill" id="t1">Mulai</button></div><div class="card"><h3>Kamu tipe seniman yang mana?</h3><p>6 pertanyaan seru untuk iseng. Hanya hiburan.</p><button class="btn fill" id="t2">Mulai</button></div></div>';
+ $("t1").onclick=function(){run("Big Five",BIG.map(function(b){return{q:b[1],o:LIK}}),bigDone)};
+ $("t2").onclick=function(){run("Tipe seniman",AQ,artDone)}}
+menu();
+$("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
