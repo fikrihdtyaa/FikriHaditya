@@ -293,7 +293,12 @@ footer{padding:28px 0 clamp(40px,6vw,56px);border-top:1.5px solid var(--ink);col
 
 </main>
 
-<footer><div class="wrap">© <span id="yr"></span> Fik. Dibuat dengan kopi, tinta, dan rasa ingin tahu.</div></footer>
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <div>© <span id="yr"></span> <span id="ftName">Fik</span>. Dibuat dengan kopi, tinta, dan rasa ingin tahu.</div>
+    <div><a href="admin.html" style="font-size:12px;opacity:0.6;text-decoration:none">Panel Admin 🔒</a></div>
+  </div>
+</footer>
 
 <div id="lb" role="dialog" aria-modal="true" aria-label="Pratinjau karya">
   <button aria-label="Tutup">tutup ✕</button>
@@ -407,17 +412,23 @@ var works=[
 
 function art(w,i,t){return w.src?'<img src="'+w.src+'" alt="'+w.t+'">':paint(w,i,t)}
 var sheet=$("sheet"),lb=$("lb");
-works.forEach(function(w,i){
-  var b=document.createElement("button");b.className="tile";b.setAttribute("aria-label","Buka "+w.t);
-  b.innerHTML=art(w,i,"s")+'<span class="cap"><b>'+w.t+'</b>'+w.m+'</span>';
-  b.onclick=function(){
-    $("lbArt").innerHTML=art(w,i,"l");
-    $("lbCap").textContent=w.t+" — "+w.m;
-    lb.classList.add("on");
-    lb.querySelector("button").focus();
-  };
-  sheet.appendChild(b);
-});
+var currentWorks=works;
+function renderWorks(workList){
+  if(workList) currentWorks=workList;
+  sheet.innerHTML="";
+  currentWorks.forEach(function(w,i){
+    var b=document.createElement("button");b.className="tile";b.setAttribute("aria-label","Buka "+w.t);
+    b.innerHTML=art(w,i,"s")+'<span class="cap"><b>'+w.t+'</b>'+w.m+'</span>';
+    b.onclick=function(){
+      $("lbArt").innerHTML=art(w,i,"l");
+      $("lbCap").textContent=w.t+" — "+w.m;
+      lb.classList.add("on");
+      lb.querySelector("button").focus();
+    };
+    sheet.appendChild(b);
+  });
+}
+renderWorks();
 lb.onclick=function(e){if(e.target===lb||e.target.tagName==="BUTTON")lb.classList.remove("on")};
 
 /* ── Blog / Tulisan Pembelajar Psikologi ── */
@@ -526,22 +537,27 @@ var posts=[
 
 var bgrid=$("bgrid"),rd=$("rd");
 
-// Render Kartu Blog
-posts.forEach(function(a,idx){
-  var card=document.createElement("button");
-  card.className="acard";
-  card.setAttribute("aria-label","Baca artikel: "+a.t);
-  card.innerHTML=
-    '<div class="acard-tag">'+a.tag+'</div>'+
-    '<h3>'+a.t+'</h3>'+
-    '<p>'+a.d+'</p>'+
-    '<div class="acard-foot">'+a.min+' menit baca &nbsp;·&nbsp; Baca selengkapnya →</div>';
-  card.onclick=function(){openArticle(idx)};
-  bgrid.appendChild(card);
-});
+var currentPosts=posts;
+function renderPosts(postList){
+  if(postList) currentPosts=postList;
+  bgrid.innerHTML="";
+  currentPosts.forEach(function(a,idx){
+    var card=document.createElement("button");
+    card.className="acard";
+    card.setAttribute("aria-label","Baca artikel: "+a.t);
+    card.innerHTML=
+      '<div class="acard-tag">'+(a.tag||"Artikel")+'</div>'+
+      '<h3>'+a.t+'</h3>'+
+      '<p>'+(a.d||"")+'</p>'+
+      '<div class="acard-foot">'+(a.min||4)+' menit baca &nbsp;·&nbsp; Baca selengkapnya →</div>';
+    card.onclick=function(){openArticle(idx)};
+    bgrid.appendChild(card);
+  });
+}
+renderPosts();
 
 function openArticle(idx){
-  var a=posts[idx];
+  var a=currentPosts[idx];
   var bodyHtml="";
   a.b.forEach(function(l,i){
     if(l[0]==="h"){
@@ -973,6 +989,138 @@ addEventListener("keydown",function(e){
 
 /* ── Tahun Otomatis di Footer ── */
 $("yr").textContent=new Date().getFullYear();
+
+/* ── Sinkronisasi Data Dinamis (Koneksi Admin & data.json) ── */
+function renderProjects(projectsList){
+  if(!projectsList||!projectsList.length) return;
+  var box = document.querySelector("#proyek .cards");
+  if(!box) return;
+  box.innerHTML = "";
+  projectsList.forEach(function(p){
+    var card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML =
+      '<h3>'+p.title+'</h3>'+
+      '<p>'+p.desc+'</p>'+
+      (p.url ? '<a class="btn" href="'+p.url+'" target="_blank" rel="noopener">'+(p.urlLabel||p.title)+'</a>' : '');
+    box.appendChild(card);
+  });
+}
+
+function renderTimeline(timelineList){
+  if(!timelineList||!timelineList.length) return;
+  var box = document.querySelector("#perjalanan .trip");
+  if(!box) return;
+  box.innerHTML = "";
+  timelineList.forEach(function(t){
+    var li = document.createElement("li");
+    li.innerHTML =
+      '<i>'+t.year+'</i>'+
+      '<div><b>'+t.title+'</b>'+t.desc+'</div>';
+    box.appendChild(li);
+  });
+}
+
+function renderProfile(p){
+  if(!p) return;
+  if(p.name){
+    document.querySelectorAll(".brand").forEach(function(el){ el.textContent = p.name; });
+    var ft = $("ftName"); if(ft) ft.textContent = p.name;
+  }
+  if(p.heroTitle){
+    var h1 = document.querySelector(".hero h1");
+    if(h1) h1.textContent = p.heroTitle;
+  }
+  if(p.heroBio){
+    var bText = document.querySelector(".byline-text");
+    if(bText) bText.innerHTML = '<strong>Aku '+(p.name||'Fik')+'.</strong> '+p.heroBio;
+  }
+  if(p.avatar){
+    document.querySelectorAll(".avatar img").forEach(function(img){ img.src = p.avatar; });
+  }
+  if(p.aboutQuote){
+    var q = document.querySelector(".about-quote");
+    if(q) q.textContent = p.aboutQuote;
+  }
+  if(p.aboutBio && p.aboutBio.length){
+    var bioPs = document.querySelectorAll(".about-bio p:not(.about-quote)");
+    if(bioPs[0] && p.aboutBio[0]) bioPs[0].textContent = p.aboutBio[0];
+    if(bioPs[1] && p.aboutBio[1]) bioPs[1].innerHTML = '<em>'+p.aboutBio[1]+'</em>';
+  }
+  if(p.studioPhoto){
+    var sImg = document.querySelector(".about-photo");
+    if(sImg) sImg.src = p.studioPhoto;
+  }
+  if(p.studioTitle || p.studioCaption){
+    var infoB = document.querySelector(".photo-info b");
+    var infoSpan = document.querySelector(".photo-info span");
+    if(infoB && p.studioTitle) infoB.textContent = p.studioTitle;
+    if(infoSpan && p.studioCaption) infoSpan.textContent = p.studioCaption;
+  }
+  if(p.details && p.details.length){
+    var dl = document.querySelector(".about-bio dl");
+    if(dl){
+      dl.innerHTML = "";
+      p.details.forEach(function(d){
+        var div = document.createElement("div");
+        div.innerHTML = '<dt>'+d.label+'</dt><dd>'+d.value+'</dd>';
+        dl.appendChild(div);
+      });
+    }
+  }
+  if(p.instagram){
+    var igLink = document.querySelector("#kontak a[href*='instagram']");
+    if(igLink){
+      var clean = p.instagram.replace('@','');
+      igLink.href = "https://instagram.com/" + clean;
+      var span = igLink.querySelector("span");
+      if(span) span.textContent = "@" + clean;
+    }
+  }
+  if(p.email){
+    var emLink = document.querySelector("#kontak a[href^='mailto']");
+    if(emLink){
+      emLink.href = "mailto:" + p.email;
+      var span = emLink.querySelector("span");
+      if(span) span.textContent = p.email;
+    }
+  }
+}
+
+function applyPortfolioData(data){
+  if(!data) return;
+  if(data.profile) renderProfile(data.profile);
+  if(data.works) renderWorks(data.works);
+  if(data.posts) renderPosts(data.posts);
+  if(data.projects) renderProjects(data.projects);
+  if(data.timeline) renderTimeline(data.timeline);
+}
+
+// Cek draft lokal terlebih dahulu
+var localData = null;
+try {
+  var raw = localStorage.getItem("fik_portfolio_data");
+  if(raw) localData = JSON.parse(raw);
+} catch(e){}
+
+if(localData){
+  applyPortfolioData(localData);
+}
+
+// Muat live data.json
+fetch("data.json?v=" + Date.now())
+  .then(function(res){
+    if(res.ok) return res.json();
+    throw new Error("HTTP " + res.status);
+  })
+  .then(function(liveData){
+    if(!localData){
+      applyPortfolioData(liveData);
+    }
+  })
+  .catch(function(err){
+    console.log("Menggunakan data fallback yang sudah terpasang:", err);
+  });
 </script>
 </body>
 </html>

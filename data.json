@@ -1,0 +1,212 @@
+{
+  "profile": {
+    "name": "Fik",
+    "handle": "sebutsaja_fik",
+    "instagram": "sebutsaja_fik",
+    "email": "emailkamu@example.com",
+    "tagline": "Travel is something worthwhile.",
+    "avatar": "fik.jpg",
+    "heroTitle": "Apa yang kamu lihat?",
+    "heroBio": "Pelukis, pejalan, dan seseorang yang sedang belajar memahami psikologi. Noda tinta di atas hanya permainan — lihat sebentar, lalu tanyakan kenapa kamu melihat itu.",
+    "aboutQuote": "Aku tertarik pada satu pertanyaan: kenapa kita melihat, merasa, dan membuat sesuatu dengan cara yang berbeda-beda.",
+    "aboutBio": [
+      "Lewat lukisan, perjalanan, dan buku-buku psikologi, aku mencari jawabannya sedikit demi sedikit. Aku bukan psikolog — hanya seseorang yang suka belajar tentang cara manusia berpikir dan merasa, lalu berbagi apa yang kutahu. Kalau ada yang salah, koreksi selalu diterima.",
+      "Travel is something worthwhile."
+    ],
+    "studioPhoto": "fik.jpg",
+    "studioTitle": "Fik di Studio",
+    "studioCaption": "Di depan lukisan 'Rusa Warna-warni'",
+    "details": [
+      { "label": "Berbasis di", "value": "Indonesia" },
+      { "label": "Media", "value": "Cat minyak, akrilik, sketsa" },
+      { "label": "Belajar", "value": "Psikologi & Perilaku Manusia" },
+      { "label": "Proyek", "value": "Ruang Kreativitas, Retroloka" }
+    ]
+  },
+  "works": [
+    {
+      "id": "w1",
+      "t": "Sawah di Tepi Sungai",
+      "m": "Cat minyak di kanvas",
+      "k": "land",
+      "h": 80,
+      "p": ["#cfe3ee", "#7fae9a", "#e0c24a", "#fff1b0", "#3f7fb5", "#4f8a6b"]
+    },
+    {
+      "id": "w2",
+      "t": "Topeng Tawa",
+      "m": "Akrilik di kayu",
+      "k": "mask",
+      "h": 125,
+      "p": ["#241c16", "#e9dcc3", "#b8553a", "#3f7fb5"]
+    },
+    {
+      "id": "w3",
+      "t": "Rusa Warna-warni",
+      "m": "Akrilik di kanvas",
+      "k": "abs",
+      "h": 110,
+      "src": "fik.jpg",
+      "p": ["#1f2a3a", "#e8812a", "#7a56a8", "#e0a526", "#5f9a4a", "#c8402f"]
+    },
+    {
+      "id": "w4",
+      "t": "Dua Kuda",
+      "m": "Arang dan cat air",
+      "k": "abs",
+      "h": 100,
+      "p": ["#cfc8b8", "#3a3a38", "#6b6a66", "#8d8a80"]
+    },
+    {
+      "id": "w5",
+      "t": "Senja di Pegunungan",
+      "m": "Cat minyak di kanvas",
+      "k": "land",
+      "h": 120,
+      "p": ["#f0b07a", "#b8553a", "#7a3b3a", "#ffe2a0", "#4a3350", "#2c2535"]
+    }
+  ],
+  "posts": [
+    {
+      "id": "p1",
+      "t": "Prokrastinasi bukan soal malas",
+      "tag": "Perbaikan Diri",
+      "min": 4,
+      "d": "Menunda pekerjaan sering kali bukan karena kurang disiplin. Ada alasan emosional di baliknya, dan ada langkah kecil untuk mulai melangkah.",
+      "b": [
+        ["p", "Kita sering terburu-buru melabeli diri sendiri atau orang lain sebagai 'pemalas' ketika menunda pekerjaan penting. Namun dari berbagai literatur psikologi yang kubaca, prokrastinasi sebenarnya lebih erat kaitannya dengan kesulitan regulasi emosi daripada kegagalan manajemen waktu."],
+        ["h", "Kenapa kita menunda?"],
+        ["p", "Saat sebuah tugas memicu emosi tidak nyaman — seperti cemas akan kegagalan, bosan, atau rasa ragu apakah hasilnya bisa sempurna — otak kita secara alami mencari cara melarikan diri. Membuka media sosial atau merapikan meja kerja memberi kelegaan instan. Otak membaca kelegaan sesaat itu sebagai hadiah (reward), sehingga lingkaran ini terus berulang. Masalahnya, beban tugas tidak berkurang dan rasa bersalah justru menumpuk."],
+        ["h", "Tiga langkah kecil yang bisa dicoba"],
+        ["p", "Pertama, kecilkan tugas sampai batas yang tidak menakutkan. Jangan berniat 'menyelesaikan satu lukisan besar' atau 'menulis bab skripsi', tapi cukup 'menyiapkan kuas di atas meja' atau 'membuka laptop dan mengetik satu kalimat'. Ambang mulai yang rendah menurunkan perlawanan mental."],
+        ["p", "Kedua, gunakan rencana implementasi jika-maka (implementation intentions). Alih-alih membuat resolusi abstrak 'saya harus rajin', tentukan rumus konkret: 'Jika alarm jam 19.00 berbunyi, maka saya akan duduk di meja selama 10 menit.' Penelitian menunjukkan bahwa rencana spesifik membantu niat berubah menjadi aksi nyata."],
+        ["p", "Ketiga, bersikap ramah pada diri sendiri (self-compassion). Banyak yang mengira memarahi diri sendiri akan memicu motivasi. Faktanya, memaafkan diri setelah menunda terbukti berkaitan dengan penurunan kecenderungan menunda pada kesempatan berikutnya."],
+        ["q", "Memulai sering kali adalah bagian paling berat. Sepuluh menit pertama biasanya sudah cukup untuk mengubah suasana pikiran."],
+        ["p", "Catatan: jika kebiasaan menunda sudah terasa melumpuhkan aktivitas sehari-hari dan disertai kecemasan berkepanjangan, berkonsultasi dengan profesional seperti psikolog adalah langkah yang bijak."]
+      ]
+    },
+    {
+      "id": "p2",
+      "t": "Psikologi warna: yang terbukti dan yang sekadar mitos",
+      "tag": "Seni & Persepsi",
+      "min": 5,
+      "d": "Merah selalu berarti marah dan biru pasti menenangkan? Menelusuri bagaimana sains memandang warna, budaya, dan emosi manusia.",
+      "b": [
+        ["p", "Di internet, kita sangat mudah menemukan tabel makna warna yang kaku: merah membangkitkan nafsu makan, biru menenangkan pikiran, kuning memicu kreativitas. Sebagai seseorang yang setiap hari berhadapan dengan cat dan pigmen, aku penasaran seberapa ilmiah klaim-klaim populer tersebut."],
+        ["h", "Apa yang masuk akal menurut riset?"],
+        ["p", "Manusia memang membentuk asosiasi tertentu terhadap warna. Warna dengan saturasi tinggi dan nada hangat cenderung meningkatkan tingkat ketergugahan fisiologis (arousal) secara halus. Namun, respons emosional terhadap warna sangat dipengaruhi oleh tiga variabel krusial: konteks pemakaian, pengalaman personal, dan budaya tempat seseorang dibesarkan."],
+        ["h", "Batasan mitos universal"],
+        ["p", "Klaim bahwa satu warna selalu memicu satu emosi yang seragam di seluruh dunia tidak didukung bukti empiris yang kokoh. Di banyak negara Barat, warna putih melambangkan kesucian dan pernikahan, sementara di sebagian budaya Asia Timur, putih adalah warna tradisional dalam upacara duka cita. Begitu pula warna hitam."],
+        ["h", "Pelajaran bagi yang berkarya"],
+        ["p", "Bagi kita yang melukis, mendesain, atau sekadar memilih warna pakaian: warna adalah instrumen dialog, bukan rumus matematika pasti. Makna sebuah warna selalu bergantung pada kontras di sekitarnya, pencahayaan, dan cerita yang ingin kita sampaikan."],
+        ["q", "Makna sebuah warna lahir dari konteks dan interaksi, bukan dari tabel aturan baku."]
+      ]
+    },
+    {
+      "id": "p3",
+      "t": "Kenapa menggambar dan berkarya bisa terasa menenangkan?",
+      "tag": "Kesehatan Mental",
+      "min": 5,
+      "d": "Meninjau kondisi 'flow', respons hormonal saat berkreasi, serta batasan jelas antara berkarya mandiri dan terapi seni profesional.",
+      "b": [
+        ["p", "Setiap kali duduk di depan kanvas setelah seharian dihadapkan pada rutinitas yang melelahkan, ada rasa hening yang perlahan hadir. Rasa tenang ini bukan sekadar sugesti; sains kognitif memiliki sejumlah penjelasan menarik tentang apa yang terjadi pada otak kita saat membuat seni."],
+        ["h", "Kondisi mengalir (Flow State)"],
+        ["p", "Psikolog Mihaly Csikszentmihalyi memperkenalkan konsep 'flow': kondisi ketika seseorang begitu larut dalam sebuah aktivitas yang seimbang antara tantangan dan keterampilan. Saat kita menggambar atau mencampur warna, fokus perhatian terpusat pada sensasi fisik di tangan. Jaringan otak yang biasanya sibuk mengunyah kekhawatiran masa lalu atau masa depan (default mode network) cenderung mereda aktivitasnya."],
+        ["h", "Bukti awal penurunan hormon stres"],
+        ["p", "Sebuah studi awal yang kerap dikutip (Kaimal et al., 2016) mengamati bahwa sekitar 45 menit beraktivitas seni terarah dikaitkan dengan penurunan kadar hormon kortisol (indikator stres) pada mayoritas partisipan, terlepas dari apakah mereka memiliki bakat seni atau sama sekali pemula. Ini menunjukkan bahwa manfaat menenangkan seni bukan hak milik seniman profesional saja."],
+        ["h", "Perbedaan penting: hobi vs terapi seni"],
+        ["p", "Sangat penting untuk memahami batasnya: menggambar di rumah untuk relaksasi adalah bentuk perawatan diri (self-care). Sementara itu, terapi seni (art therapy) adalah layanan klinis terstruktur yang dipandu oleh terapis seni tersertifikasi untuk menangani trauma atau gangguan psikologis tertentu. Keduanya berharga, namun berkarya mandiri tidak menggantikan peran terapi medis profesional."],
+        ["q", "Kamu tidak butuh bakat untuk menikmati prosesnya. Yang dicari adalah kehadiran pikiran saat ini, bukan hasil pameran."]
+      ]
+    },
+    {
+      "id": "p4",
+      "t": "Rasa takjub (Awe) dan alasan perjalanan terasa begitu berarti",
+      "tag": "Psikologi Perjalanan",
+      "min": 4,
+      "d": "Kenapa seminggu di tempat asing sering terasa lebih membekas dibanding satu bulan rutinitas biasa? Sains di balik ingatan, adaptasi hedonis, dan rasa takjub.",
+      "b": [
+        ["p", "Pernahkah kamu memperhatikan kenapa seminggu perjalanan ke tempat baru sering terasa begitu panjang dan membekas di ingatan, sedangkan sebulan kerja di kantor berlalu begitu cepat seolah baru kemarin? Mengapa bepergian memiliki efek penyegaran yang unik?"],
+        ["h", "Kebaruan memperkaya jejak memori"],
+        ["p", "Otak kita adalah mesin penghemat energi. Saat menjalani rutinitas harian yang monoton, otak berjalan dalam mode otomatis dan jarang merekam detail baru. Sebaliknya, saat berada di kota atau bentang alam yang baru, setiap sensorik dituntut waspada. Kepadatan stimulus baru ini menciptakan lebih banyak titik kait memori (memory anchors), sehingga saat dikenang kembali, waktu terasa lebih lapang dan berarti."],
+        ["h", "Psikologi rasa takjub (Awe)"],
+        ["p", "Dacher Keltner dan rekan-rekannya di UC Berkeley meneliti emosi 'awe' — rasa kagum dan takjub ketika kita berhadapan dengan sesuatu yang begitu luas dan agung hingga melampaui kerangka pemahaman kita biasa (misalnya berdiri di tepi jurang ngarai, menatap langit malam bertabur bintang, atau karya arsitektur kuno). Riset menemukan rasa takjub membantu meredakan ego diri (small-self) dan meningkatkan rasa keterhubungan sosial serta kerendahan hati."],
+        ["h", "Mematahkan adaptasi hedonis"],
+        ["p", "Manusia cepat terbiasa dengan hal menyenangkan — fenomena yang dikenal sebagai adaptasi hedonis. Perjalanan mengajak kita keluar dari zona nyaman itu. Namun takjub tidak selalu memerlukan tiket pesawat mahal; berjalan kaki di lorong kota sendiri dengan mata yang benar-benar memperhatikan sering kali menghadirkan rasa yang serupa."],
+        ["q", "Takjub tidak selalu menuntut jarak yang jauh. Terkadang ia hanya menuntut kita berhenti bergegas dan benar-benar memperhatikan."]
+      ]
+    },
+    {
+      "id": "p5",
+      "t": "Self-compassion: belajar tidak terlalu keras pada diri sendiri",
+      "tag": "Perbaikan Diri",
+      "min": 5,
+      "d": "Mengapa bersikap ramah pada diri sendiri bukan tanda kelemahan, dan bagaimana sains melihat kritik diri versus penerimaan diri.",
+      "b": [
+        ["p", "Dulu aku sempat percaya bahwa cara satu-satunya untuk berkembang adalah bersikap sangat keras pada diri sendiri. Jika ada karya yang jelek atau rencana yang gagal, suaraku di kepala akan segera menghakimi: 'Kenapa ceroboh sekali? Harusnya bisa lebih baik.' Kupikir itu bentuk disiplin. Namun setelah membaca penelitian seputar self-compassion, pandangan itu berubah total."],
+        ["h", "Tiga pilar self-compassion"],
+        ["p", "Dr. Kristin Neff merumuskan tiga elemen kunci: pertama, kebaikan diri (self-kindness) menggantikan penghakiman yang kasar; kedua, kesadaran kemanusiaan bersama (common humanity), yakni memahami bahwa membuat kesalahan, terluka, dan merasa tidak cukup adalah pengalaman universal setiap manusia di bumi; ketiga, kesadaran penuh (mindfulness), melihat emosi sebagaimana adanya tanpa membesar-besarkan atau memendamnya."],
+        ["h", "Mitos bahwa kebaikan diri membuat kita malas"],
+        ["p", "Banyak orang takut jika tidak mencambuk diri sendiri, mereka akan berhenti berusaha. Riset psikologi justru menemukan sebaliknya: orang yang mempraktikkan self-compassion cenderung memiliki ketakutan akan kegagalan yang lebih rendah, resiliensi yang lebih tinggi, dan kemauan lebih besar untuk mencoba lagi setelah jatuh. Mereka termotivasi oleh kepedulian untuk bertumbuh, bukan oleh rasa takut dipermalukan."],
+        ["h", "Latihan sederhana saat hari terasa berat"],
+        ["p", "Tanyakan pada dirimu: 'Jika sahabat terdekatku datang menceritakan masalah yang sama persis, apa yang akan kukatakan padanya?' Biasanya kita sangat lembut dan suportif pada sahabat, tetapi kejam pada diri sendiri. Cobalah berikan kehangatan yang sama pada dirimu hari ini."],
+        ["q", "Bersikap baik pada diri sendiri bukanlah kelemahan. Justru dibutuhkan keberanian besar untuk tidak ikut menyerang dirimu saat situasi di luar sudah cukup berat."]
+      ]
+    },
+    {
+      "id": "p6",
+      "t": "Journaling sederhana sebagai sarana menjernihkan pikiran",
+      "tag": "Perbaikan Diri",
+      "min": 4,
+      "d": "Menulis catatan bukan untuk menjadi sastrawan, melainkan alat bantu kognitif untuk mengurai benang kusut di kepala.",
+      "b": [
+        ["p", "Sering kali pikiran kita terasa seperti browser komputer dengan tiga puluh tab terbuka sekaligus: bising, lambat, dan membebani. Salah satu kebiasaan sederhana yang paling membantuku beberapa tahun terakhir adalah journaling atau menulis jurnal pribadi."],
+        ["h", "Meringankan beban kerja memori"],
+        ["p", "Secara kognitif, otak kita sangat hebat dalam menghasilkan gagasan, namun payah dalam menyimpannya sekaligus di kepala (working memory terbatas). Ketika kekhawatiran atau ide-ide liar hanya berputar di kepala, mereka cenderung terasa lebih besar dan menakutkan dari kenyataannya. Begitu dipindahkan ke atas kertas, pikiran itu terwujud menjadi objek konkret yang bisa kita amati dengan jarak objektif."],
+        ["h", "Tidak perlu rapi, tidak perlu puitis"],
+        ["p", "Hambatan terbesar banyak orang adalah anggapan bahwa jurnal harus ditulis dengan bahasa yang indah atau buku catatan yang mahal. Padahal journaling adalah percakapan jujur tanpa filter antara kamu dan dirimu sendiri. Tidak ada yang akan memberi nilai."],
+        ["h", "Tiga format praktis untuk dicoba"],
+        ["p", "1. 'Brain Dump' 5 menit: Tuliskan apa saja yang melintas di kepala tanpa menyunting ejaan atau tanda baca sampai timer berbunyi."],
+        ["p", "2. Refleksi Tiga Pertanyaan: 'Apa yang sedang kurasakan sekarang?', 'Fakta apa yang memicu perasaan ini?', dan 'Satu hal kecil apa yang berada dalam kendaliku hari ini?'"],
+        ["p", "3. Log Rasa Syukur Spesifik: Catat bukan hal umum seperti 'bersyukur masih hidup', melainkan detail kecil: 'aroma kopi hangat pagi tadi' atau 'angin sejuk saat menunggu lampu merah'."],
+        ["q", "Menulis bukan soal menghasilkan karya sastra. Ini soal memberi ruang pada pikiranmu untuk didengar secara utuh."]
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj1",
+      "title": "Ruang Kreativitas",
+      "desc": "Wadah bagi seniman dan pekerja kreatif untuk berkumpul, belajar, dan memamerkan karya.",
+      "url": "https://instagram.com/ruangkreativitas.id",
+      "urlLabel": "@ruangkreativitas.id"
+    },
+    {
+      "id": "proj2",
+      "title": "Retroloka",
+      "desc": "Ruang bernuansa retro tempat barang, musik, dan cerita lama bertemu orang baru.",
+      "url": "https://instagram.com/retroloka",
+      "urlLabel": "@retroloka"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "t1",
+      "year": "2024",
+      "title": "Galeri kota",
+      "desc": "Pameran potret dan pemandangan yang membuat saya berhenti lama."
+    },
+    {
+      "id": "t2",
+      "year": "2025",
+      "title": "Workshop topeng",
+      "desc": "Belajar bagaimana satu topeng bisa menyimpan banyak ekspresi."
+    },
+    {
+      "id": "t3",
+      "year": "2026",
+      "title": "Jalan berikutnya",
+      "desc": "Masih kosong. Kamera dan buku sketsa sudah di tas."
+    }
+  ]
+}
